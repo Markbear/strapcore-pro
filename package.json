@@ -1,0 +1,35 @@
+{
+  "name": "strapcore",
+  "version": "1.0.0",
+  "description": "StrapCore Framework",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^4.1.2",
+    "browser-sync": "^2.24.6",
+    "critical": "^1.3.4",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-imageoptim": "^1.0.9",
+    "gulp-include": "^2.3.1",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-rename": "^1.3.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-uglify": "^3.0.0",
+    "gulp-watch": "^5.0.0",
+    "gulp-zip": "^4.1.0",
+    "jshint-stylish": "^2.2.1",
+    "popper.js": "^1.14.3",
+    "rename": "^1.0.4"
+  },
+  "devDependencies": {
+    "gulp-jshint": "^2.1.0",
+    "gulp-util": "^3.0.8",
+    "jshint": "^2.9.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
