@@ -24,20 +24,18 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'strapcore' ); ?></a>
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
+    <header id="masthead" class="site-header">
+		<nav class="navbar navbar-expand-xl navbar-light bg-light">
+		
 			<?php strapcore_theme_logo(); ?>
-		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'strapcore' ); ?></button>
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'primary',
-				'menu_id'        => 'primary-menu',
-			) );
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#strapcore-navbar-collapse" aria-controls="strapcore-navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<?php strapcore_main_nav(); ?>
+			
+		</nav><!-- .navbar -->
+	</header><!-- .site-header -->
 
 	<div id="content" class="site-content">
