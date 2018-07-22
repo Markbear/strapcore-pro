@@ -6603,6 +6603,28 @@ a {
   clear: both;
   margin: 0 0 1.5em; }
 
+.site-content {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px; }
+  .site-content .content-area {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    flex: 0 0 75%;
+    max-width: 75%; }
+  .site-content .widget-area {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    flex: 0 0 25%;
+    max-width: 25%; }
+
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/

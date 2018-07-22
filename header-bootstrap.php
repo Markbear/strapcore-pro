@@ -25,17 +25,18 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'strapcore' ); ?></a>
 
     <header id="masthead" class="site-header">
-		<nav class="navbar navbar-expand-xl navbar-light bg-light">
-		
-			<?php strapcore_theme_logo(); ?>
+			<nav class="navbar navbar-expand-xl navbar-light bg-light">
+				<div class="container">
+					<?php strapcore_theme_logo(); ?>
 
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#strapcore-navbar-collapse" aria-controls="strapcore-navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#strapcore-navbar-collapse" aria-controls="strapcore-navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
 
-			<?php strapcore_main_nav(); ?>
-			
-		</nav><!-- .navbar -->
+					<?php strapcore_main_nav(); ?>
+				</div><!-- .container -->
+			</nav><!-- .navbar -->
 	</header><!-- .site-header -->
 
+	<div class="container">
 	<div id="content" class="site-content">
