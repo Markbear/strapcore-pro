@@ -6578,6 +6578,11 @@ a {
   /* Make sure select elements fit in widgets. */ }
   .widget select {
     max-width: 100%; }
+  .widget #wp-calendar {
+    width: 100%; }
+  .widget table {
+    width: 100%;
+    max-width: 100%; }
 
 /*--------------------------------------------------------------
 # Content
