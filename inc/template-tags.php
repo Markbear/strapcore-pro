@@ -171,3 +171,22 @@ if ( ! function_exists( 'strapcore_post_thumbnail' ) ) :
 		endif; // End is_singular().
 	}
 endif;
+
+function strapcore_posts_navigation(){
+	?>
+	<div class="strapcore-post-nav">
+		<?php previous_posts_link('<button id="previous-post" class="btn btn-light"><i class="fas fa-arrow-circle-left"></i> Newer</button>'); ?>
+		<?php next_posts_link('<button id="next-post" class="btn btn-light">Older <i class="fas fa-arrow-circle-right"></i></button>'); ?>
+	</div>
+	<?php
+}
+
+function strapcore_post_navigation(){
+	?>
+	<div class="strapcore-post-nav">
+		<?php previous_post_link('<button id="previous-post" class="btn btn-light">%link</button>', _x( '<i class="fas fa-arrow-circle-left"></i> %title', 'Previous post link', 'strapcore' ) ); ?>
+		<?php next_post_link('<button id="next-post" class="btn btn-light">%link</button>',     _x( '%title <i class="fas fa-arrow-circle-right"></i>', 'Next post link', 'strapcore' ) ); ?>
+	</div>
+	<?php
+}
+

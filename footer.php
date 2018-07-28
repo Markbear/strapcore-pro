@@ -15,6 +15,9 @@
 	</div><!-- #container -->
 
 	<footer id="colophon" class="site-footer">
+		
+		<?php strapcore_footer_menu(); ?>
+		
 		<div class="container">
 			<div class="site-info">
 				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'strapcore' ) ); ?>">

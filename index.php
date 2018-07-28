@@ -41,15 +41,8 @@ get_header('bootstrap');
 				get_template_part( 'template-parts/content', get_post_type() );
 
 			endwhile;
-
-			the_posts_navigation();
 			
-		?>	
-			<div class="strapcore-post-nav">
-				<button id="previous-post" class="btn btn-light"><?php previous_posts_link(); ?></button>
-				<button id="next-post" class="btn btn-light"><?php next_posts_link(); ?></button>
-			</div>
-		<?php
+			strapcore_posts_navigation();
 			
 		else :
 

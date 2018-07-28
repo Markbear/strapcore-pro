@@ -33,6 +33,7 @@
 					</button>
 
 					<?php strapcore_main_nav(); ?>
+					
 				</div><!-- .container -->
 			</nav><!-- .navbar -->
 	</header><!-- .site-header -->

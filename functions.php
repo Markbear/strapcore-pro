@@ -45,6 +45,7 @@ if ( ! function_exists( 'strapcore_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'primary' => esc_html__( 'Bootstrap', 'strapcore' ),
+			'footer-menu' => esc_html__( 'Footer Menu', 'strapcore' ),
 		) );
 
 		/*
@@ -138,6 +139,11 @@ if ( class_exists( 'WooCommerce' ) ) {
 }
 
 /**
- * Bootstrap Walker Menu
+ * Site Header Functions
  */
 require get_template_directory() . '/inc/header-functions.php';
+
+/**
+ * Site Footer Functions
+ */
+require get_template_directory() . '/inc/footer-functions.php';
