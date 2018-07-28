@@ -24,6 +24,8 @@
 				<?php
 				strapcore_posted_on();
 				strapcore_posted_by();
+				strapcore_posted_in();
+				strapcore_posted_comments();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
@@ -54,6 +56,9 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php strapcore_entry_footer(); ?>
+		<?php
+		strapcore_posted_tags();
+		strapcore_posted_edit();
+		?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -23,6 +23,7 @@
     "rename": "^1.0.4"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.2.0",
     "gulp-jshint": "^2.1.0",
     "gulp-util": "^3.0.8",
     "jshint": "^2.9.5"

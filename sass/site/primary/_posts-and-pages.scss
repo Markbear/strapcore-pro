@@ -23,6 +23,8 @@
 
 .site-content {
   @include make-row();
+  word-break: break-word; 
+  padding-top: 50px;
 
   .content-area {
 	@include make-col-ready();

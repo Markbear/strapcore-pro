@@ -39,6 +39,14 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 --------------------------------------------------------------*/
 @import "vars/variables-site";
 @import "bootstrap";
+
+@fa-font-path: "../../../node_modules/@fortawesome/fontawesome-free/webfonts";
+@import "../../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
+@import "../../../node_modules/@fortawesome/fontawesome-free/scss/brands";
+@import "../../../node_modules/@fortawesome/fontawesome-free/scss/regular";
+@import "../../../node_modules/@fortawesome/fontawesome-free/scss/solid";
+@import "../../../node_modules/@fortawesome/fontawesome-free/scss/v4-shims";
+
 @import "mixins/mixins-master";
 
 /*--------------------------------------------------------------
@@ -62,6 +70,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "modules/clearings";
 
 /*--------------------------------------------------------------
+# Post Navigations
+--------------------------------------------------------------*/
+@import "navigation/posts-navigation";
+
+/*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
 @import "site/secondary/widgets";
@@ -75,3 +88,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Media
 --------------------------------------------------------------*/
 @import "media/media";
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+@import "site/footer";
