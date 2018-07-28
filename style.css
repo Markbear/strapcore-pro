@@ -12430,9 +12430,6 @@ a {
 .sticky {
   display: block; }
 
-.hentry {
-  margin: 0 0 1.5em; }
-
 .updated:not(.published) {
   display: none; }
 
@@ -12468,6 +12465,29 @@ a {
     padding-left: 15px;
     flex: 0 0 25%;
     max-width: 25%; }
+  .site-content .strapcore-blog {
+    margin-bottom: 25px; }
+
+.entry-meta,
+.entry-footer {
+  font-size: 16px; }
+  .entry-meta span,
+  .entry-footer span {
+    margin-right: 15px;
+    display: inline-block; }
+    .entry-meta span:last-child,
+    .entry-footer span:last-child {
+      margin-right: 0; }
+    .entry-meta span a,
+    .entry-footer span a {
+      colort: #404040 !important; }
+      .entry-meta span a:hover,
+      .entry-footer span a:hover {
+        color: #404040 !important; }
+  .entry-meta svg,
+  .entry-footer svg {
+    margin-top: -3px;
+    margin-right: 5px; }
 
 /*--------------------------------------------------------------
 ## Comments

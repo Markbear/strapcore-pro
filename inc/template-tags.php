@@ -27,7 +27,7 @@ if ( ! function_exists( 'strapcore_posted_on' ) ) :
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
 			esc_html_x( '%s', 'post date', 'strapcore' ),
-			'Published on: <a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a> '
+			'<i class="far fa-calendar-alt"></i><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
 		echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
@@ -42,11 +42,11 @@ if ( ! function_exists( 'strapcore_posted_by' ) ) :
 	function strapcore_posted_by() {
 		$byline = sprintf(
 			/* translators: %s: post author. */
-			esc_html_x( 'by %s', 'post author', 'strapcore' ),
+			esc_html_x( '%s', 'post author', 'strapcore' ),
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
-		echo '| Written by: <span class="byline"> ' . $byline . '</span> '; // WPCS: XSS OK.
+		echo '<i class="fas fa-user-circle"></i><span class="byline">' . $byline . '</span> '; // WPCS: XSS OK.
 
 	}
 endif;
@@ -61,7 +61,7 @@ if ( ! function_exists( 'strapcore_posted_in' ) ) :
 		$categories_list = get_the_category_list( esc_html__( ', ', 'strapcore' ) );
 		if ( $categories_list ) {
 			/* translators: 1: list of categories. */
-			printf( '<span class="cat-links">' . esc_html__( '| Catgories posted in %1$s', 'strapcore' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+			printf( '<i class="fas fa-folder-open"></i><span class="cat-links">' . esc_html__( ' %1$s', 'strapcore' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 		}
 
 	}
@@ -77,7 +77,7 @@ if ( ! function_exists( 'strapcore_posted_tags' ) ) :
 		$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'strapcore' ) );
 		if ( $tags_list ) {
 			/* translators: 1: list of tags. */
-			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'strapcore' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			printf( '<i class="fas fa-tags"></i><span class="tags-links">' . esc_html__( 'Tagged %1$s', 'strapcore' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 		}
 
 	}
@@ -93,7 +93,7 @@ if ( ! function_exists( 'strapcore_posted_edit' ) ) :
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Edit <span class="screen-reader-text">%s</span>', 'strapcore' ),
+					__( 'Edit <span class="sr-only">%s</span>', 'strapcore' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -102,7 +102,7 @@ if ( ! function_exists( 'strapcore_posted_edit' ) ) :
 				),
 				get_the_title()
 			),
-			'<span class="edit-link">',
+			'<i class="fas fa-edit"></i><span class="edit-link">',
 			'</span>'
 		);
 
@@ -116,12 +116,12 @@ if ( ! function_exists( 'strapcore_posted_comments' ) ) :
 	function strapcore_posted_comments() {
 
 		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-			echo '<span class="comments-link">';
+			echo '<i class="fas fa-comments"></i><span class="comments-link">';
 			comments_popup_link(
 				sprintf(
 					wp_kses(
 						/* translators: %s: post title */
-						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'strapcore' ),
+						__( 'Leave a Comment<span class="sr-only"> on %s</span>', 'strapcore' ),
 						array(
 							'span' => array(
 								'class' => array(),

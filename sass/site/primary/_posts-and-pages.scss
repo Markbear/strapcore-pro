@@ -3,7 +3,6 @@
 }
 
 .hentry {
-	margin: 0 0 1.5em;
 }
 
 .updated:not(.published) {
@@ -35,4 +34,36 @@
 	@include make-col-ready();
 	@include make-col(3);	
 	}
+	
+	.strapcore-blog {
+		margin-bottom: 25px;
+	}
+}
+
+.entry-meta,
+.entry-footer {
+	font-size: 16px;
+	
+	span {
+		margin-right: 15px;
+		display: inline-block;
+ 
+		&:last-child {
+			margin-right: 0;
+		}
+		
+		a {
+			colort: $color__text-main !important;
+			
+			&:hover {
+				color: $color__text-main !important;
+			}
+		}
+	}
+	
+	svg {
+		margin-top: -3px;
+		margin-right: 5px;
+	}
+	
 }
