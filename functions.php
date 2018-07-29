@@ -147,3 +147,8 @@ require get_template_directory() . '/inc/header-functions.php';
  * Site Footer Functions
  */
 require get_template_directory() . '/inc/footer-functions.php';
+
+/**
+ * Comment Callback
+ */
+require get_template_directory() . '/inc/comment-callback.php';

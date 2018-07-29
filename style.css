@@ -12448,8 +12448,16 @@ a {
   margin-right: -15px;
   margin-left: -15px;
   word-break: break-word;
-  padding-top: 50px; }
+  padding: 50px 0; }
   .site-content .content-area {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    flex: 0 0 100%;
+    max-width: 100%; }
+  .site-content .sidebar-content-area {
     position: relative;
     width: 100%;
     min-height: 1px;
@@ -12467,6 +12475,8 @@ a {
     max-width: 25%; }
   .site-content .strapcore-blog {
     margin-bottom: 25px; }
+  .site-content .post-thumbnail img {
+    margin-top: 10px; }
 
 .entry-meta,
 .entry-footer {
@@ -12488,6 +12498,20 @@ a {
   .entry-footer svg {
     margin-top: -3px;
     margin-right: 5px; }
+
+.author-meta {
+  margin: 40px 0; }
+  .author-meta .avatar {
+    border-radius: 50%;
+    margin-right: 20px; }
+  .author-meta svg {
+    font-size: 32px;
+    color: #404040; }
+    .author-meta svg:hover {
+      color: #404040; }
+
+.search-highlight {
+  background: #FFFF00; }
 
 /*--------------------------------------------------------------
 ## Comments

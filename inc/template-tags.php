@@ -190,3 +190,82 @@ function strapcore_post_navigation(){
 	<?php
 }
 
+function strapcore_author(){
+	// Display author bio if post isn't password protected
+	if ( ! post_password_required() ) : ?>
+	
+	<?php if ( get_the_author_meta('description') != '' ) : ?>       
+		<div class="author-meta card">
+			<div class="card-body">
+				<div class="media">
+					<div class="align-self-center">
+						<?php if (function_exists('get_avatar')) { echo get_avatar( get_the_author_meta( 'ID' ), 80 ); }?>
+					</div>
+					<div class="media-body">
+						<h5 class=""><?php the_author_posts_link(); ?></h5>
+						<p><?php the_author_meta('description') ?></p>
+						
+						<?php
+						// Retrieve a custom field value
+						$twitterHandle = get_the_author_meta('twitter'); 
+						$fbHandle = get_the_author_meta('facebook');
+						$gHandle = get_the_author_meta('gplus');
+						$instHandle = get_the_author_meta('instagram');
+						$linkHandle = get_the_author_meta('linkedin');
+						?>
+						<p> 
+							<?php if ( get_the_author_meta('twitter') != '' ) : ?>
+							<a href="http://twitter.com/<?php echo esc_html($twitterHandle); ?>" target="_blank"><i class="fab fa-twitter-square"></i></a>
+							<?php endif; // no twitter handle ?>
+ 
+							<?php if ( get_the_author_meta('facebook') != '' ) : ?>
+							<a href="<?php echo esc_url($fbHandle); ?>" target="_blank"><i class="fab fa-facebook"></i></a>
+							<?php endif; // no facebook url ?>
+ 
+							<?php if ( get_the_author_meta('gplus') != '' ) : ?>
+							<a href="<?php echo esc_url($gHandle); ?>" target="_blank"><i class="fab fa-google-plus-square"></i></a>
+							<?php endif; // no google+ url ?>
+							
+							<?php if ( get_the_author_meta('instagram') != '' ) : ?>
+							<a href="<?php echo esc_url($instHandle); ?>" target="_blank"><i class="fab fa-instagram"></i></a>
+							<?php endif; // no google+ url ?>
+							
+							<?php if ( get_the_author_meta('linkedin') != '' ) : ?>
+							<a href="<?php echo esc_url($linkHandle); ?>" target="_blank"><i class="fab fa-linkedin"></i></a>
+							<?php endif; // no google+ url ?>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div><!-- end of #author-meta -->
+	<?php endif; // no description, no author's meta ?>
+		
+	<?php
+	//end password protection check 
+	endif;
+}
+
+function strapcore_author_contact($profile_fields) {
+
+	// Add new fields
+	$profile_fields['twitter'] = 'Twitter Username';
+	$profile_fields['facebook'] = 'Facebook URL';
+	$profile_fields['gplus'] = 'Google+ URL';
+	$profile_fields['instagram'] = 'Instagram URL';
+	$profile_fields['linkedin'] = 'Linkedin URL';
+
+	return $profile_fields;
+}
+add_filter('user_contactmethods', 'strapcore_author_contact');
+
+
+/**
+ * Custom function to highlight search terms
+ */
+function strapcore_search_highlight() {
+    $excerpt = get_the_excerpt();
+    $keys = implode('|', explode(' ', get_search_query()));
+    $excerpt = preg_replace('/(' . $keys .')/iu', '<strong class="search-highlight">\0</strong>', $excerpt);
+
+    echo '<p>' . $excerpt . '</p>';
+}

@@ -23,20 +23,29 @@
 .site-content {
 	@include make-row();
 	word-break: break-word; 
-	padding-top: 50px;
+	padding: 50px 0;
 
 	.content-area {
-	@include make-col-ready();
-	@include make-col(9);	
+		@include make-col-ready();
+		@include make-col(12);	
+	}
+	
+	.sidebar-content-area {
+		@include make-col-ready();
+		@include make-col(9);
 	}
 
 	.widget-area {
-	@include make-col-ready();
-	@include make-col(3);	
+		@include make-col-ready();
+		@include make-col(3);	
 	}
 	
 	.strapcore-blog {
 		margin-bottom: 25px;
+	}
+	
+	.post-thumbnail img {
+		margin-top: 10px;
 	}
 }
 
@@ -66,4 +75,26 @@
 		margin-right: 5px;
 	}
 	
+}
+
+.author-meta {
+	margin: 40px 0;
+	
+	.avatar {
+		border-radius: 50%;
+		margin-right: 20px;
+	}
+	
+	svg {
+		font-size: 32px;
+		color: $color__text-main;
+		
+		&:hover {
+			color: $color__text-main;
+		}
+	}
+}
+
+.search-highlight {
+    background:#FFFF00  
 }
