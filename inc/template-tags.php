@@ -190,6 +190,13 @@ function strapcore_post_navigation(){
 	<?php
 }
 
+function strapcore_comments_navigation(){
+	?>
+		<?php previous_comments_link('<button id="previous-comment" class="btn btn-light"><i class="fas fa-arrow-circle-left"></i> Newer</button>'); ?>
+		<?php next_comments_link('<button id="next-comment" class="btn btn-light">Older <i class="fas fa-arrow-circle-right"></i></button>'); ?>
+	<?php
+}
+
 function strapcore_author(){
 	// Display author bio if post isn't password protected
 	if ( ! post_password_required() ) : ?>

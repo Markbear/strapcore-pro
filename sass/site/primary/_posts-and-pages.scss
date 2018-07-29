@@ -27,12 +27,12 @@
 
 	.content-area {
 		@include make-col-ready();
-		@include make-col(12);	
+		@include make-col(9);	
 	}
 	
-	.sidebar-content-area {
+	.full-content-area {
 		@include make-col-ready();
-		@include make-col(9);
+		@include make-col(12);
 	}
 
 	.widget-area {

@@ -15,7 +15,7 @@
 get_header('bootstrap');
 ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="full-content-area">
 		<main id="main" class="site-main">
 
 		<?php

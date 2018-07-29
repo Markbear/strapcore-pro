@@ -12,7 +12,7 @@ get_sidebar('left');
 
 ?>
 
-	<div id="primary" class="sidebar-content-area">
+	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
 		<?php

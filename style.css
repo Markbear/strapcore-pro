@@ -12455,16 +12455,16 @@ a {
     min-height: 1px;
     padding-right: 15px;
     padding-left: 15px;
-    flex: 0 0 100%;
-    max-width: 100%; }
-  .site-content .sidebar-content-area {
+    flex: 0 0 75%;
+    max-width: 75%; }
+  .site-content .full-content-area {
     position: relative;
     width: 100%;
     min-height: 1px;
     padding-right: 15px;
     padding-left: 15px;
-    flex: 0 0 75%;
-    max-width: 75%; }
+    flex: 0 0 100%;
+    max-width: 100%; }
   .site-content .widget-area {
     position: relative;
     width: 100%;
@@ -12521,6 +12521,19 @@ a {
 
 .bypostauthor {
   display: block; }
+
+.comment-navigation #next-comment {
+  float: right; }
+
+.comment-list {
+  list-style: none;
+  padding-left: 0; }
+  .comment-list .card {
+    margin-bottom: 10px; }
+  .comment-list ol {
+    list-style: none; }
+    .comment-list ol .card {
+      margin-bottom: 10px; }
 
 /*--------------------------------------------------------------
 # Media
