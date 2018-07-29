@@ -26,3 +26,7 @@
 	}
 }
 
+.comment-respond .submit {
+	@extend .btn;
+	@extend .btn-light;
+}

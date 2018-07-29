@@ -205,7 +205,7 @@ function strapcore_author(){
 		<div class="author-meta card">
 			<div class="card-body">
 				<div class="media">
-					<div class="align-self-center">
+					<div class="">
 						<?php if (function_exists('get_avatar')) { echo get_avatar( get_the_author_meta( 'ID' ), 80 ); }?>
 					</div>
 					<div class="media-body">
