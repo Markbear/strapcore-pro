@@ -12501,7 +12501,21 @@ a {
   margin-right: -15px;
   margin-left: -15px;
   word-break: break-word;
-  padding: 50px 0; }
+  padding: 20px 0; }
+  .site-content .breadcrumbs {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    flex: 0 0 100%;
+    max-width: 100%; }
+    .site-content .breadcrumbs a {
+      color: #404040 !important; }
+      .site-content .breadcrumbs a:hover {
+        color: #404040 !important; }
+    .site-content .breadcrumbs svg {
+      margin-top: -3px; }
   .site-content .content-area {
     position: relative;
     width: 100%;
@@ -12543,7 +12557,7 @@ a {
       margin-right: 0; }
     .entry-meta span a,
     .entry-footer span a {
-      colort: #404040 !important; }
+      color: #404040 !important; }
       .entry-meta span a:hover,
       .entry-footer span a:hover {
         color: #404040 !important; }

@@ -7,7 +7,7 @@
  * @package StrapCore
  */
 
-get_header();
+get_header('bootstrap');
 ?>
 
 	<div id="primary" class="content-area">

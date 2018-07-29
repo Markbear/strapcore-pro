@@ -40,3 +40,4 @@
 
 	<div class="container">
 	<div id="content" class="site-content">
+		<?php strapcore_breadcrumbs(); ?>
