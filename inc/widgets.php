@@ -34,5 +34,35 @@ function strapcore_widgets_init() {
 		'before_title'  => '<h2 class="widget-title card-title">',
 		'after_title'   => '</h2>',
 	) );
+	
+	register_sidebar( array(
+		'name'          => esc_html__( 'Left Footer Widget', 'strapcore' ),
+		'id'            => 'footer-left',
+		'description'   => esc_html__( 'This is the left widget in the footer section for all pages.', 'strapcore' ),
+		'before_widget' => '<section id="%1$s" class="widget card %2$s"><div class="card-body">',
+		'after_widget'  => '</div></section>',
+		'before_title'  => '<h2 class="widget-title card-title">',
+		'after_title'   => '</h2>',
+	) );
+	
+	register_sidebar( array(
+		'name'          => esc_html__( 'Center Footer Widget', 'strapcore' ),
+		'id'            => 'footer-center',
+		'description'   => esc_html__( 'This is the center widget in the footer section for all pages.', 'strapcore' ),
+		'before_widget' => '<section id="%1$s" class="widget card %2$s"><div class="card-body">',
+		'after_widget'  => '</div></section>',
+		'before_title'  => '<h2 class="widget-title card-title">',
+		'after_title'   => '</h2>',
+	) );
+	
+	register_sidebar( array(
+		'name'          => esc_html__( 'Right Footer Widget', 'strapcore' ),
+		'id'            => 'footer-right',
+		'description'   => esc_html__( 'This is the right widget in the footer section for all pages.', 'strapcore' ),
+		'before_widget' => '<section id="%1$s" class="widget card %2$s"><div class="card-body">',
+		'after_widget'  => '</div></section>',
+		'before_title'  => '<h2 class="widget-title card-title">',
+		'after_title'   => '</h2>',
+	) );
 }
 add_action( 'widgets_init', 'strapcore_widgets_init' );

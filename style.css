@@ -12543,7 +12543,7 @@ a {
   .site-content .strapcore-blog {
     margin-bottom: 25px; }
   .site-content .post-thumbnail img {
-    margin-top: 10px; }
+    /*margin-top: 10px;*/ }
 
 .entry-meta,
 .entry-footer {
@@ -12681,6 +12681,15 @@ img {
 .site-footer {
   background: #f1f1f1;
   color: #404040; }
+  .site-footer .footer-widgets .widget-area {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    flex: 0 0 33.33333333%;
+    max-width: 33.33333333%;
+    margin: 25px 0; }
   .site-footer .site-info {
     margin: 20px 0; }
     .site-footer .site-info a {

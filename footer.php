@@ -15,6 +15,27 @@
 	</div><!-- #container -->
 
 	<footer id="colophon" class="site-footer">
+		<div class="container footer-widgets">
+			<div class="row">	
+				<?php
+				if ( is_active_sidebar( 'footer-left' ) ) { ?>
+					<aside id="secondary" class="widget-area">
+						<?php dynamic_sidebar( 'footer-left' ); ?>
+					</aside><!-- #secondary -->
+				<?php }
+				if ( is_active_sidebar( 'footer-left' ) ) { ?>
+					<aside id="secondary" class="widget-area">
+						<?php dynamic_sidebar( 'footer-center' ); ?>
+					</aside><!-- #secondary -->
+				<?php } 
+				if ( is_active_sidebar( 'footer-left' ) ) { ?>
+					<aside id="secondary" class="widget-area">
+						<?php dynamic_sidebar( 'footer-right' ); ?>
+					</aside><!-- #secondary -->
+				<?php } ?>
+			</div>
+		</div>
+		
 		
 		<?php strapcore_footer_menu(); ?>
 		

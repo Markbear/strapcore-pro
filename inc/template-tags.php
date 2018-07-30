@@ -209,40 +209,40 @@ function strapcore_author(){
 						<?php if (function_exists('get_avatar')) { echo get_avatar( get_the_author_meta( 'ID' ), 80 ); }?>
 					</div>
 					<div class="media-body">
-						<h5 class=""><?php the_author_posts_link(); ?></h5>
+						<h5 class="card-title"><?php the_author_posts_link(); ?></h5>
 						<p><?php the_author_meta('description') ?></p>
-						
-						<?php
-						// Retrieve a custom field value
-						$twitterHandle = get_the_author_meta('twitter'); 
-						$fbHandle = get_the_author_meta('facebook');
-						$gHandle = get_the_author_meta('gplus');
-						$instHandle = get_the_author_meta('instagram');
-						$linkHandle = get_the_author_meta('linkedin');
-						?>
-						<p> 
-							<?php if ( get_the_author_meta('twitter') != '' ) : ?>
-							<a href="http://twitter.com/<?php echo esc_html($twitterHandle); ?>" target="_blank"><i class="fab fa-twitter-square"></i></a>
-							<?php endif; // no twitter handle ?>
- 
-							<?php if ( get_the_author_meta('facebook') != '' ) : ?>
-							<a href="<?php echo esc_url($fbHandle); ?>" target="_blank"><i class="fab fa-facebook"></i></a>
-							<?php endif; // no facebook url ?>
- 
-							<?php if ( get_the_author_meta('gplus') != '' ) : ?>
-							<a href="<?php echo esc_url($gHandle); ?>" target="_blank"><i class="fab fa-google-plus-square"></i></a>
-							<?php endif; // no google+ url ?>
-							
-							<?php if ( get_the_author_meta('instagram') != '' ) : ?>
-							<a href="<?php echo esc_url($instHandle); ?>" target="_blank"><i class="fab fa-instagram"></i></a>
-							<?php endif; // no google+ url ?>
-							
-							<?php if ( get_the_author_meta('linkedin') != '' ) : ?>
-							<a href="<?php echo esc_url($linkHandle); ?>" target="_blank"><i class="fab fa-linkedin"></i></a>
-							<?php endif; // no google+ url ?>
-						</p>
 					</div>
+					
 				</div>
+			</div>
+			<div class="card-footer">
+				<?php
+				// Retrieve a custom field value
+				$twitterHandle = get_the_author_meta('twitter'); 
+				$fbHandle = get_the_author_meta('facebook');
+				$gHandle = get_the_author_meta('gplus');
+				$instHandle = get_the_author_meta('instagram');
+				$linkHandle = get_the_author_meta('linkedin');
+				?>
+				<?php if ( get_the_author_meta('twitter') != '' ) : ?>
+				<a href="http://twitter.com/<?php echo esc_html($twitterHandle); ?>" target="_blank"><i class="fab fa-twitter-square"></i></a>
+				<?php endif; // no twitter handle ?>
+
+				<?php if ( get_the_author_meta('facebook') != '' ) : ?>
+				<a href="<?php echo esc_url($fbHandle); ?>" target="_blank"><i class="fab fa-facebook"></i></a>
+				<?php endif; // no facebook url ?>
+
+				<?php if ( get_the_author_meta('gplus') != '' ) : ?>
+				<a href="<?php echo esc_url($gHandle); ?>" target="_blank"><i class="fab fa-google-plus-square"></i></a>
+				<?php endif; // no google+ url ?>
+				
+				<?php if ( get_the_author_meta('instagram') != '' ) : ?>
+				<a href="<?php echo esc_url($instHandle); ?>" target="_blank"><i class="fab fa-instagram"></i></a>
+				<?php endif; // no google+ url ?>
+				
+				<?php if ( get_the_author_meta('linkedin') != '' ) : ?>
+				<a href="<?php echo esc_url($linkHandle); ?>" target="_blank"><i class="fab fa-linkedin"></i></a>
+				<?php endif; // no google+ url ?>
 			</div>
 		</div><!-- end of #author-meta -->
 	<?php endif; // no description, no author's meta ?>

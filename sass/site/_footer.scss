@@ -2,6 +2,17 @@
 	background: $color__background-screen;
 	color: $color__text-main;
 
+	.footer-widgets {
+		
+		.widget-area {
+			@include make-col-ready();
+			@include make-col(4);
+			margin: 25px 0;
+		}
+	
+	}
+	
+	
 	.site-info {
 		margin: 20px 0; 
 		
