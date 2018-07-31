@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package StrapCore
+ * @package Strapcore-Pro
  */
 
 if ( ! function_exists( 'strapcore_posted_on' ) ) :
@@ -26,7 +26,7 @@ if ( ! function_exists( 'strapcore_posted_on' ) ) :
 
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
-			esc_html_x( '%s', 'post date', 'strapcore' ),
+			esc_html_x( '%s', 'post date', 'strapcore-pro' ),
 			'<i class="far fa-calendar-alt"></i><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
@@ -42,7 +42,7 @@ if ( ! function_exists( 'strapcore_posted_by' ) ) :
 	function strapcore_posted_by() {
 		$byline = sprintf(
 			/* translators: %s: post author. */
-			esc_html_x( '%s', 'post author', 'strapcore' ),
+			esc_html_x( '%s', 'post author', 'strapcore-pro' ),
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
@@ -58,10 +58,10 @@ if ( ! function_exists( 'strapcore_posted_in' ) ) :
 	function strapcore_posted_in() {
 		
 		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( esc_html__( ', ', 'strapcore' ) );
+		$categories_list = get_the_category_list( esc_html__( ', ', 'strapcore-pro' ) );
 		if ( $categories_list ) {
 			/* translators: 1: list of categories. */
-			printf( '<i class="fas fa-folder-open"></i><span class="cat-links">' . esc_html__( ' %1$s', 'strapcore' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+			printf( '<i class="fas fa-folder-open"></i><span class="cat-links">' . esc_html__( ' %1$s', 'strapcore-pro' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 		}
 
 	}
@@ -74,10 +74,10 @@ if ( ! function_exists( 'strapcore_posted_tags' ) ) :
 	function strapcore_posted_tags() {
 		
 		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'strapcore' ) );
+		$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'strapcore-pro' ) );
 		if ( $tags_list ) {
 			/* translators: 1: list of tags. */
-			printf( '<i class="fas fa-tags"></i><span class="tags-links">' . esc_html__( 'Tagged %1$s', 'strapcore' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			printf( '<i class="fas fa-tags"></i><span class="tags-links">' . esc_html__( 'Tagged %1$s', 'strapcore-pro' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 		}
 
 	}
@@ -93,7 +93,7 @@ if ( ! function_exists( 'strapcore_posted_edit' ) ) :
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Edit <span class="sr-only">%s</span>', 'strapcore' ),
+					__( 'Edit <span class="sr-only">%s</span>', 'strapcore-pro' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -121,7 +121,7 @@ if ( ! function_exists( 'strapcore_posted_comments' ) ) :
 				sprintf(
 					wp_kses(
 						/* translators: %s: post title */
-						__( 'Leave a Comment<span class="sr-only"> on %s</span>', 'strapcore' ),
+						__( 'Leave a Comment<span class="sr-only"> on %s</span>', 'strapcore-pro' ),
 						array(
 							'span' => array(
 								'class' => array(),
@@ -174,7 +174,7 @@ endif;
 
 function strapcore_posts_navigation(){
 	?>
-	<div class="strapcore-post-nav">
+	<div class="strapcore-pro-post-nav">
 		<?php previous_posts_link('<button id="previous-post" class="btn btn-light"><i class="fas fa-arrow-circle-left"></i> Newer</button>'); ?>
 		<?php next_posts_link('<button id="next-post" class="btn btn-light">Older <i class="fas fa-arrow-circle-right"></i></button>'); ?>
 	</div>
@@ -183,9 +183,9 @@ function strapcore_posts_navigation(){
 
 function strapcore_post_navigation(){
 	?>
-	<div class="strapcore-post-nav">
-		<?php previous_post_link('<button id="previous-post" class="btn btn-light">%link</button>', _x( '<i class="fas fa-arrow-circle-left"></i> %title', 'Previous post link', 'strapcore' ) ); ?>
-		<?php next_post_link('<button id="next-post" class="btn btn-light">%link</button>',     _x( '%title <i class="fas fa-arrow-circle-right"></i>', 'Next post link', 'strapcore' ) ); ?>
+	<div class="strapcore-pro-post-nav">
+		<?php previous_post_link('<button id="previous-post" class="btn btn-light">%link</button>', _x( '<i class="fas fa-arrow-circle-left"></i> %title', 'Previous post link', 'strapcore-pro' ) ); ?>
+		<?php next_post_link('<button id="next-post" class="btn btn-light">%link</button>',     _x( '%title <i class="fas fa-arrow-circle-right"></i>', 'Next post link', 'strapcore-pro' ) ); ?>
 	</div>
 	<?php
 }

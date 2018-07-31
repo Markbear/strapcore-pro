@@ -1,10 +1,10 @@
 <?php
 /**
- * StrapCore functions and definitions
+ * Strapcore-Pro functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package StrapCore
+ * @package Strapcore-Pro
  */
 
 if ( ! function_exists( 'strapcore_setup' ) ) :
@@ -19,10 +19,10 @@ if ( ! function_exists( 'strapcore_setup' ) ) :
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on StrapCore, use a find and replace
-		 * to change 'strapcore' to the name of your theme in all the template files.
+		 * If you're building a theme based on Strapcore-Pro, use a find and replace
+		 * to change 'strapcore-pro' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'strapcore', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'strapcore-pro', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -44,8 +44,8 @@ if ( ! function_exists( 'strapcore_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'primary' => esc_html__( 'Bootstrap', 'strapcore' ),
-			'footer-menu' => esc_html__( 'Footer Menu', 'strapcore' ),
+			'primary' => esc_html__( 'Bootstrap', 'strapcore-pro' ),
+			'footer-menu' => esc_html__( 'Footer Menu', 'strapcore-pro' ),
 		) );
 
 		/*

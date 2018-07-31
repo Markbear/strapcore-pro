@@ -4,7 +4,7 @@
  *
  * @link https://jetpack.com/
  *
- * @package StrapCore
+ * @package Strapcore-Pro
  */
 
 /**
@@ -28,7 +28,7 @@ function strapcore_jetpack_setup() {
 	// Add theme support for Content Options.
 	add_theme_support( 'jetpack-content-options', array(
 		'post-details'    => array(
-			'stylesheet' => 'strapcore-style',
+			'stylesheet' => 'strapcore-pro-style',
 			'date'       => '.posted-on',
 			'categories' => '.cat-links',
 			'tags'       => '.tags-links',

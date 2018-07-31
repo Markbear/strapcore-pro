@@ -7,7 +7,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package StrapCore
+ * @package Strapcore-Pro
  */
 
 /*
@@ -32,13 +32,13 @@ if ( post_password_required() ) {
 			if ( '1' === $strapcore_comment_count ) {
 				printf(
 					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'strapcore' ),
+					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'strapcore-pro' ),
 					'<span>' . get_the_title() . '</span>'
 				);
 			} else {
 				printf( // WPCS: XSS OK.
 					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $strapcore_comment_count, 'comments title', 'strapcore' ) ),
+					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $strapcore_comment_count, 'comments title', 'strapcore-pro' ) ),
 					number_format_i18n( $strapcore_comment_count ),
 					'<span>' . get_the_title() . '</span>'
 				);
@@ -67,7 +67,7 @@ if ( post_password_required() ) {
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() ) :
 			?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'strapcore' ); ?></p>
+			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'strapcore-pro' ); ?></p>
 			<?php
 		endif;
 
@@ -84,26 +84,26 @@ if ( post_password_required() ) {
 			// remove "Text or HTML to be displayed after the set of comment fields"
 			'comment_notes_after' => '',
 			// redefine your own textarea (the comment body)
-			'comment_field' => ' <div class="form-group"><label for="comment">' . _x( 'Comment', 'strapcore' ) . '</label><textarea class="form-control" rows="10" id="comment" name="comment" aria-required="true"></textarea></div>',
+			'comment_field' => ' <div class="form-group"><label for="comment">' . _x( 'Comment', 'strapcore-pro' ) . '</label><textarea class="form-control" rows="10" id="comment" name="comment" aria-required="true"></textarea></div>',
 
 			'fields' => apply_filters( 'comment_form_default_fields', array(
 
 			'author' =>
 			  '<div class="form-group">' .
-			  '<label for="author">' . __( 'Name', 'strapcore' ) . '</label> ' .
+			  '<label for="author">' . __( 'Name', 'strapcore-pro' ) . '</label> ' .
 			  ( $req ? '<span class="required">*</span>' : '' ) .
 			  '<input class="form-control" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
 			  '" size="30"' . $aria_req . ' /></div>',
 
 			'email' =>
-			  '<div class="form-group"><label for="email">' . __( 'Email', 'strapcore' ) . '</label> ' .
+			  '<div class="form-group"><label for="email">' . __( 'Email', 'strapcore-pro' ) . '</label> ' .
 			  ( $req ? '<span class="required">*</span>' : '' ) .
 			  '<input class="form-control" id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
 			  '" size="30"' . $aria_req . ' /></div>',
 
 			'url' =>
 			  '<div class="form-group"><label for="url">' .
-			  __( 'Website', 'strapcore' ) . '</label>' .
+			  __( 'Website', 'strapcore-pro' ) . '</label>' .
 			  '<input class="form-control" id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .
 			  '" size="30" /></div>'
 			  

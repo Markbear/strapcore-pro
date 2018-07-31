@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package StrapCore
+ * @package Strapcore-Pro
  */
 
 ?>
@@ -36,7 +36,7 @@
 				<div class="container">
 					<?php strapcore_theme_logo(); ?>
 
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#strapcore-navbar-collapse" aria-controls="strapcore-navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#strapcore-pro-navbar-collapse" aria-controls="strapcore-pro-navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
 

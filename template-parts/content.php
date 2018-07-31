@@ -4,12 +4,12 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package StrapCore
+ * @package Strapcore-Pro
  */
 
 ?>
 
-<div class="strapcore-blog">
+<div class="strapcore-pro-blog">
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<div class="card">
 			<div class="card-img-top">
@@ -34,7 +34,7 @@
 					the_excerpt( sprintf(
 						wp_kses(
 							/* translators: %s: Name of current post. Only visible to screen readers */
-							__( 'Continue reading<span class="sr-only"> "%s"</span>', 'strapcore' ),
+							__( 'Continue reading<span class="sr-only"> "%s"</span>', 'strapcore-pro' ),
 							array(
 								'span' => array(
 									'class' => array(),
@@ -45,7 +45,7 @@
 					) );
 
 					wp_link_pages( array(
-						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'strapcore' ),
+						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'strapcore-pro' ),
 						'after'  => '</div>',
 					) );
 					?>

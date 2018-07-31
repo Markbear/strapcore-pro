@@ -1,1 +1,1 @@
-Strapcore - Bootstrap wordpress theme
+Strapcore-Pro - Bootstrap wordpress theme

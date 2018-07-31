@@ -2,8 +2,8 @@
 //Footer Menu
 function strapcore_footer_menu() {
 	
-	if (has_nav_menu('footer-menu', 'strapcore')) { ?>
-		<div class="strapcore-footer-menu">
+	if (has_nav_menu('footer-menu', 'strapcore-pro')) { ?>
+		<div class="strapcore-pro-footer-menu">
 			<div class="container">
 				<nav role="navigation">
 					<?php 

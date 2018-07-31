@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package StrapCore
+ * @package Strapcore-Pro
  */
 
 ?>
@@ -21,7 +21,7 @@
 		the_content();
 
 		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'strapcore' ),
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'strapcore-pro' ),
 			'after'  => '</div>',
 		) );
 		?>

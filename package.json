@@ -1,7 +1,7 @@
 {
-  "name": "strapcore",
+  "name": "strapcore-pro",
   "version": "1.0.0",
-  "description": "StrapCore Framework",
+  "description": "Strapcore-Pro Framework",
   "main": "index.js",
   "dependencies": {
     "bootstrap": "^4.1.2",

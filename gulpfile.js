@@ -55,7 +55,7 @@ gulp.task('zip', function () {
    '!bower_components',
    '!node_modules',
   ], {base: "."})
-  .pipe(zip('strapcore.zip'))
+  .pipe(zip('strapcore-pro.zip'))
   .pipe(gulp.dest('.'));
 });
  

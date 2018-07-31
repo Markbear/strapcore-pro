@@ -4,7 +4,7 @@
  *
  * The template for displaying the left sidebar page.
  *
- * @package StrapCore
+ * @package Strapcore-Pro
  */
 
 get_header('bootstrap');

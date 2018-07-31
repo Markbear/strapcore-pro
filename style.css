@@ -1,5 +1,5 @@
 /*!
-Theme Name: StrapCore
+Theme Name: Strapcore-Pro
 Theme URI: http://underscores.me/
 Author: Strap Themes
 Author URI: https://strapthemes.com
@@ -7,13 +7,13 @@ Description: Description
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
-Text Domain: strapcore
+Text Domain: strapcore-pro
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
-StrapCore is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Strapcore-Pro is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
@@ -6534,11 +6534,11 @@ a.text-dark:hover, a.text-dark:focus {
 /*--------------------------------------------------------------
 # Post Navigations
 --------------------------------------------------------------*/
-.strapcore-post-nav {
+.strapcore-pro-post-nav {
   margin: 30px 0; }
-  .strapcore-post-nav a:hover {
+  .strapcore-pro-post-nav a:hover {
     text-decoration: none; }
-  .strapcore-post-nav #next-post {
+  .strapcore-pro-post-nav #next-post {
     float: right; }
 
 /*--------------------------------------------------------------
@@ -6620,7 +6620,7 @@ a.text-dark:hover, a.text-dark:focus {
     padding-left: 15px;
     flex: 0 0 25%;
     max-width: 25%; }
-  .site-content .strapcore-blog {
+  .site-content .strapcore-pro-blog {
     margin-bottom: 25px; }
   .site-content .post-thumbnail img {
     /*margin-top: 10px;*/ }
@@ -6765,17 +6765,17 @@ img {
     float: right;
     font-size: 32px;
     margin-left: 10px; }
-  .site-footer .strapcore-footer-menu {
+  .site-footer .strapcore-pro-footer-menu {
     padding: 25px 0; }
-    .site-footer .strapcore-footer-menu ul {
+    .site-footer .strapcore-pro-footer-menu ul {
       padding-left: 0;
       margin-bottom: 0; }
-      .site-footer .strapcore-footer-menu ul li {
+      .site-footer .strapcore-pro-footer-menu ul li {
         display: inline;
         list-style-type: none; }
-        .site-footer .strapcore-footer-menu ul li a {
+        .site-footer .strapcore-pro-footer-menu ul li a {
           border-left: 1px solid #ddd;
           padding: 0 8px; }
-        .site-footer .strapcore-footer-menu ul li:first-child > a {
+        .site-footer .strapcore-pro-footer-menu ul li:first-child > a {
           border-left: none;
           padding: 0 8px 0 0; }

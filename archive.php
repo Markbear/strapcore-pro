@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package StrapCore
+ * @package Strapcore-Pro
  */
 
 get_header('bootstrap');

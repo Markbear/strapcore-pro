@@ -4,7 +4,7 @@
  *
  * @link https://woocommerce.com/
  *
- * @package StrapCore
+ * @package Strapcore-Pro
  */
 
 /**
@@ -29,7 +29,7 @@ add_action( 'after_setup_theme', 'strapcore_woocommerce_setup' );
  * @return void
  */
 function strapcore_woocommerce_scripts() {
-	wp_enqueue_style( 'strapcore-woocommerce-style', get_template_directory_uri() . '/woocommerce.css' );
+	wp_enqueue_style( 'strapcore-pro-woocommerce-style', get_template_directory_uri() . '/woocommerce.css' );
 
 	$font_path   = WC()->plugin_url() . '/assets/fonts/';
 	$inline_font = '@font-face {
@@ -43,7 +43,7 @@ function strapcore_woocommerce_scripts() {
 			font-style: normal;
 		}';
 
-	wp_add_inline_style( 'strapcore-woocommerce-style', $inline_font );
+	wp_add_inline_style( 'strapcore-pro-woocommerce-style', $inline_font );
 }
 add_action( 'wp_enqueue_scripts', 'strapcore_woocommerce_scripts' );
 
@@ -224,11 +224,11 @@ if ( ! function_exists( 'strapcore_woocommerce_cart_link' ) ) {
 	 */
 	function strapcore_woocommerce_cart_link() {
 		?>
-		<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'strapcore' ); ?>">
+		<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'strapcore-pro' ); ?>">
 			<?php
 			$item_count_text = sprintf(
 				/* translators: number of items in the mini cart. */
-				_n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'strapcore' ),
+				_n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'strapcore-pro' ),
 				WC()->cart->get_cart_contents_count()
 			);
 			?>

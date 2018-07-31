@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package StrapCore
+ * @package Strapcore-Pro
  */
 
 ?>
@@ -24,16 +24,16 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 site-info">
-					<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'strapcore' ) ); ?>">
+					<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'strapcore-pro' ) ); ?>">
 						<?php
 						/* translators: %s: CMS name, i.e. WordPress. */
-						printf( esc_html__( 'Proudly powered by %s', 'strapcore' ), 'WordPress' );
+						printf( esc_html__( 'Proudly powered by %s', 'strapcore-pro' ), 'WordPress' );
 						?>
 					</a>
 					<span class="sep"> | </span>
 						<?php
 						/* translators: 1: Theme name, 2: Theme author. */
-						printf( esc_html__( 'Theme: %1$s by %2$s.', 'strapcore' ), 'strapcore', '<a href="https://strapthemes.com">Strap Themes</a>' );
+						printf( esc_html__( 'Theme: %1$s by %2$s.', 'strapcore-pro' ), 'strapcore-pro', '<a href="https://strapthemes.com">Strap Themes</a>' );
 						?>
 				</div><!-- .site-info -->
 				<div class="col-lg-6 footer-social">
