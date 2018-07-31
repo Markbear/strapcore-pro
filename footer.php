@@ -11,8 +11,9 @@
 
 ?>
 
-	</div><!-- #content -->
+	</div><!-- #row -->
 	</div><!-- #container -->
+	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
 		

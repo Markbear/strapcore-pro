@@ -17,7 +17,7 @@ get_header('bootstrap');
 
 <?php strapcore_breadcrumbs(); ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area col-lg-9">
 		<main id="main" class="site-main">
 
 		<?php
