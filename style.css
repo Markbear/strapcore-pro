@@ -434,7 +434,7 @@ mark,
   max-width: 100%;
   height: auto; }
 
-.img-thumbnail {
+.img-thumbnail, .gallery-item img {
   padding: 0.25rem;
   background-color: #fff;
   border: 1px solid #dee2e6;
@@ -12473,6 +12473,9 @@ a {
   .widget table {
     width: 100%;
     max-width: 100%; }
+  .widget .card-body ul, .widget ol {
+    list-style: none;
+    padding-left: 10px; }
 
 /*--------------------------------------------------------------
 # Content
@@ -12654,7 +12657,9 @@ img {
   display: inline-block;
   text-align: center;
   vertical-align: top;
-  width: 100%; }
+  width: 100%;
+  padding: 2px;
+  margin-bottom: 0; }
   .gallery-columns-2 .gallery-item {
     max-width: 50%; }
   .gallery-columns-3 .gallery-item {
@@ -12673,7 +12678,14 @@ img {
     max-width: 11.11%; }
 
 .gallery-caption {
-  display: block; }
+  display: none; }
+
+.gallery-item img {
+  width: 100%;
+  margin: 0 auto;
+  /*border: 2px solid #e3e3e3;
+	padding: 7px;
+	background: #fff;*/ }
 
 /*--------------------------------------------------------------
 # Footer

@@ -7,6 +7,8 @@
 	text-align: center;
 	vertical-align: top;
 	width: 100%;
+	padding: 2px;
+	margin-bottom: 0;
 
 	// Loops to enumerate the classes for gallery columns.
 	@for $i from 2 through 9 {
@@ -17,5 +19,14 @@
 }
 
 .gallery-caption {
-	display: block;
+	display: none;
+}
+
+.gallery-item img {
+	width: 100%;
+	margin: 0 auto;
+	/*border: 2px solid #e3e3e3;
+	padding: 7px;
+	background: #fff;*/
+	@extend .img-thumbnail;
 }

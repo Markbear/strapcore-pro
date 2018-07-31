@@ -11,8 +11,8 @@ function strapcore_widgets_init() {
 		'description'   => esc_html__( 'This is the default sidebar for index, archive and search pages.', 'strapcore' ),
 		'before_widget' => '<section id="%1$s" class="widget card %2$s"><div class="card-body">',
 		'after_widget'  => '</div></section>',
-		'before_title'  => '<h2 class="widget-title card-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h3 class="widget-title card-title">',
+		'after_title'   => '</h3>',
 	) );
 	
 	register_sidebar( array(
@@ -21,8 +21,8 @@ function strapcore_widgets_init() {
 		'description'   => esc_html__( 'This is the sidebar for pages with a left hand sidebar.', 'strapcore' ),
 		'before_widget' => '<section id="%1$s" class="widget card %2$s"><div class="card-body">',
 		'after_widget'  => '</div></section>',
-		'before_title'  => '<h2 class="widget-title card-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h3 class="widget-title card-title">',
+		'after_title'   => '</h3>',
 	) );
 	
 	register_sidebar( array(
@@ -31,8 +31,8 @@ function strapcore_widgets_init() {
 		'description'   => esc_html__( 'This is the sidebar for pages with a right hand sidebar.', 'strapcore' ),
 		'before_widget' => '<section id="%1$s" class="widget card %2$s"><div class="card-body">',
 		'after_widget'  => '</div></section>',
-		'before_title'  => '<h2 class="widget-title card-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h3 class="widget-title card-title">',
+		'after_title'   => '</h3>',
 	) );
 	
 	register_sidebar( array(
@@ -41,8 +41,8 @@ function strapcore_widgets_init() {
 		'description'   => esc_html__( 'This is the left widget in the footer section for all pages.', 'strapcore' ),
 		'before_widget' => '<section id="%1$s" class="widget card %2$s"><div class="card-body">',
 		'after_widget'  => '</div></section>',
-		'before_title'  => '<h2 class="widget-title card-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h3 class="widget-title card-title">',
+		'after_title'   => '</h3>',
 	) );
 	
 	register_sidebar( array(
@@ -51,8 +51,8 @@ function strapcore_widgets_init() {
 		'description'   => esc_html__( 'This is the center widget in the footer section for all pages.', 'strapcore' ),
 		'before_widget' => '<section id="%1$s" class="widget card %2$s"><div class="card-body">',
 		'after_widget'  => '</div></section>',
-		'before_title'  => '<h2 class="widget-title card-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h3 class="widget-title card-title">',
+		'after_title'   => '</h3>',
 	) );
 	
 	register_sidebar( array(
@@ -61,8 +61,8 @@ function strapcore_widgets_init() {
 		'description'   => esc_html__( 'This is the right widget in the footer section for all pages.', 'strapcore' ),
 		'before_widget' => '<section id="%1$s" class="widget card %2$s"><div class="card-body">',
 		'after_widget'  => '</div></section>',
-		'before_title'  => '<h2 class="widget-title card-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h3 class="widget-title card-title">',
+		'after_title'   => '</h3>',
 	) );
 }
 add_action( 'widgets_init', 'strapcore_widgets_init' );
