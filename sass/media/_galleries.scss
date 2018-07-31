@@ -25,5 +25,5 @@
 .gallery-item img {
 	width: 100%;
 	margin: 0 auto;
-	/*@extend .img-thumbnail;*/
+	@extend .img-thumbnail;
 }

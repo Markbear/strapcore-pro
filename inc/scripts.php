@@ -5,15 +5,6 @@
 function strapcore_scripts() {
 	
 	wp_enqueue_style( 'strapcore-style', get_stylesheet_uri() );
-	
-	if ( 'default' == get_theme_mod( 'bootswatch', 'style.min.css') ) : 
-		wp_enqueue_style( 'strapcore-bootswatch', get_template_directory_uri() . '/css/bootstrap.css');
-	else:
-		$color_scheme = get_theme_mod( 'bootswatch', 'style.min.css');
-		wp_enqueue_style( 'strapcore-bootswatch', get_template_directory_uri() . '/css/' . $color_scheme);
-	endif;
-	
-	
 
 	wp_enqueue_script( 'strapcore-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	

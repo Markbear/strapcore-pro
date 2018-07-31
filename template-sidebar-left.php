@@ -14,7 +14,7 @@ get_sidebar('left');
 
 <?php strapcore_breadcrumbs_pages(); ?>
 
-	<div id="primary" class="content-area col-lg-9">
+	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
 		<?php

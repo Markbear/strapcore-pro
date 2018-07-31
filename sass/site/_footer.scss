@@ -1,12 +1,9 @@
 .site-footer {
-	/*background: $color__background-screen;*/
-	/*color: $color__text-main;*/
+	border-top: 1px solid rgba(0, 0, 0, 0.125);
 
 	.footer-widgets {
 		
 		.widget-area {
-			/*@include make-col-ready();
-			@include make-col(4);*/
 			margin: 25px 0;
 		}
 	
@@ -15,14 +12,6 @@
 	
 	.site-info {
 		margin: 20px 0; 
-		
-		a {
-			/*color: $color__text-main;*/
-			
-			:hover {
-				/*color: $color__text-main;*/
-			}
-		}
 	}
 	
 	.footer-social {
@@ -49,11 +38,6 @@
 				a {
 					border-left: 1px solid #ddd;
 					padding: 0 8px;
-					/*color: $color__text-main;*/
-					
-					&:hover {
-						/*color: $color__text-main;*/
-					}
 				}
 				
 				&:first-child > a {

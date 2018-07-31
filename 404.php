@@ -12,7 +12,7 @@ get_header('bootstrap');
 
 <?php strapcore_breadcrumbs(); ?>
 
-	<div id="primary" class="full-content-area col-lg-9">
+	<div id="primary" class="full-content-area">
 		<main id="main" class="site-main">
 
 			<section class="error-404 not-found">
