@@ -15,45 +15,31 @@
 	</div><!-- #container -->
 
 	<footer id="colophon" class="site-footer">
-		<div class="container footer-widgets">
-			<div class="row">	
-				<?php
-				if ( is_active_sidebar( 'footer-left' ) ) { ?>
-					<aside id="secondary" class="widget-area">
-						<?php dynamic_sidebar( 'footer-left' ); ?>
-					</aside><!-- #secondary -->
-				<?php }
-				if ( is_active_sidebar( 'footer-left' ) ) { ?>
-					<aside id="secondary" class="widget-area">
-						<?php dynamic_sidebar( 'footer-center' ); ?>
-					</aside><!-- #secondary -->
-				<?php } 
-				if ( is_active_sidebar( 'footer-left' ) ) { ?>
-					<aside id="secondary" class="widget-area">
-						<?php dynamic_sidebar( 'footer-right' ); ?>
-					</aside><!-- #secondary -->
-				<?php } ?>
-			</div>
-		</div>
 		
+		<?php strapcore_display_footer_widgets(); ?>
 		
 		<?php strapcore_footer_menu(); ?>
 		
 		<div class="container">
-			<div class="site-info">
-				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'strapcore' ) ); ?>">
-					<?php
-					/* translators: %s: CMS name, i.e. WordPress. */
-					printf( esc_html__( 'Proudly powered by %s', 'strapcore' ), 'WordPress' );
-					?>
-				</a>
-				<span class="sep"> | </span>
-					<?php
-					/* translators: 1: Theme name, 2: Theme author. */
-					printf( esc_html__( 'Theme: %1$s by %2$s.', 'strapcore' ), 'strapcore', '<a href="https://strapthemes.com">Strap Themes</a>' );
-					?>
-			</div><!-- .site-info -->
-		</div><!-- #container -->
+			<div class="row">
+				<div class="col-lg-6 site-info">
+					<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'strapcore' ) ); ?>">
+						<?php
+						/* translators: %s: CMS name, i.e. WordPress. */
+						printf( esc_html__( 'Proudly powered by %s', 'strapcore' ), 'WordPress' );
+						?>
+					</a>
+					<span class="sep"> | </span>
+						<?php
+						/* translators: 1: Theme name, 2: Theme author. */
+						printf( esc_html__( 'Theme: %1$s by %2$s.', 'strapcore' ), 'strapcore', '<a href="https://strapthemes.com">Strap Themes</a>' );
+						?>
+				</div><!-- .site-info -->
+				<div class="col-lg-6 footer-social">
+					<?php strapcore_social_icons(); ?>
+				</div>
+			</div><!-- .row -->
+		</div><!-- .container -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

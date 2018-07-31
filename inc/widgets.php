@@ -66,3 +66,60 @@ function strapcore_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'strapcore_widgets_init' );
+
+/**
+ * Display Footer Widgets
+ */
+function strapcore_display_footer_widgets(){
+	if ( 0 == get_theme_mod( 'display_footer_widgets' ) ) : 
+		return;
+	elseif ( 1 == get_theme_mod( 'display_footer_widgets' ) ) : ?>
+		<div class="container footer-widgets">
+			<div class="row">	
+				<?php
+				if ( is_active_sidebar( 'footer-left' ) ) { ?>
+					<aside id="secondary" class="col-lg-12 widget-area">
+						<?php dynamic_sidebar( 'footer-left' ); ?>
+					</aside><!-- #secondary -->
+				<?php } ?>
+			</div>
+		</div>
+	<?php elseif ( 2 == get_theme_mod( 'display_footer_widgets' ) ) : ?>
+		<div class="container footer-widgets">
+			<div class="row">	
+				<?php
+				if ( is_active_sidebar( 'footer-left' ) ) { ?>
+					<aside id="secondary" class="col-lg-6 widget-area">
+						<?php dynamic_sidebar( 'footer-left' ); ?>
+					</aside><!-- #secondary -->
+				<?php }
+				if ( is_active_sidebar( 'footer-center' ) ) { ?>
+					<aside id="secondary" class="col-lg-6 widget-area">
+						<?php dynamic_sidebar( 'footer-center' ); ?>
+					</aside><!-- #secondary -->
+				<?php } ?>
+			</div>
+		</div>
+	<?php elseif ( 3 == get_theme_mod( 'display_footer_widgets' ) ) : ?>
+		<div class="container footer-widgets">
+			<div class="row">	
+				<?php
+				if ( is_active_sidebar( 'footer-left' ) ) { ?>
+					<aside id="secondary" class="col-lg-4 widget-area">
+						<?php dynamic_sidebar( 'footer-left' ); ?>
+					</aside><!-- #secondary -->
+				<?php }
+				if ( is_active_sidebar( 'footer-center' ) ) { ?>
+					<aside id="secondary" class="col-lg-4 widget-area">
+						<?php dynamic_sidebar( 'footer-center' ); ?>
+					</aside><!-- #secondary -->
+				<?php } 
+				if ( is_active_sidebar( 'footer-right' ) ) { ?>
+					<aside id="secondary" class="col-lg-4 widget-area">
+						<?php dynamic_sidebar( 'footer-right' ); ?>
+					</aside><!-- #secondary -->
+				<?php } ?>
+			</div>
+		</div>
+	<?php endif;	
+}

@@ -276,3 +276,31 @@ function strapcore_search_highlight() {
 
     echo '<p>' . $excerpt . '</p>';
 }
+
+/**
+ * Social Icons
+ */
+ 
+function strapcore_social_icons(){
+	$facebook = get_theme_mod('facebook_social'); 
+	$twitter = get_theme_mod('twitter_social'); 
+	$instagram = get_theme_mod('instagram_social'); 
+	$google = get_theme_mod('google_social'); 
+	$linkedin = get_theme_mod('linkedin_social'); 
+
+	if( $facebook != '') : ?>
+		<a href="<?php echo $facebook; ?>"><i class="fab fa-facebook-square"></i></a>
+	<?php endif;
+	if( $twitter != '') : ?>
+		<a href="<?php echo $twitter; ?>"><i class="fab fa-twitter-square"></i></a>
+	<?php endif;
+	if( $instagram != '') : ?>
+		<a href="<?php echo $instagram; ?>"><i class="fab fa-instagram"></i></a>
+	<?php endif;
+	if( $google != '') : ?>
+		<a href="<?php echo $google; ?>"><i class="fab fa-google-plus-square"></i></a>
+	<?php endif; 
+	if( $linkedin != '') : ?>
+		<a href="<?php echo $linkedin; ?>"><i class="fab fa-linkedin"></i></a>
+	<?php endif;
+}

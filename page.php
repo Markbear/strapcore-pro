@@ -15,6 +15,8 @@
 get_header('bootstrap');
 ?>
 
+<?php strapcore_breadcrumbs_pages(); ?>
+
 	<div id="primary" class="full-content-area">
 		<main id="main" class="site-main">
 

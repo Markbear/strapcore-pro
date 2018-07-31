@@ -12694,13 +12694,8 @@ img {
   background: #f1f1f1;
   color: #404040; }
   .site-footer .footer-widgets .widget-area {
-    position: relative;
-    width: 100%;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
-    flex: 0 0 33.33333333%;
-    max-width: 33.33333333%;
+    /*@include make-col-ready();
+			@include make-col(4);*/
     margin: 25px 0; }
   .site-footer .site-info {
     margin: 20px 0; }
@@ -12708,6 +12703,10 @@ img {
       color: #404040; }
       .site-footer .site-info a :hover {
         color: #404040; }
+  .site-footer .footer-social a {
+    float: right;
+    font-size: 32px;
+    margin-left: 10px; }
   .site-footer .strapcore-footer-menu {
     padding: 25px 0; }
     .site-footer .strapcore-footer-menu ul {

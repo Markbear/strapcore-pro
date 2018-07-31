@@ -17,6 +17,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
+	<?php if ( true == get_theme_mod( 'fixed_navbar', true ) ) : ?>
+		
+	<?php endif; ?>
+
 	<?php wp_head(); ?>
 </head>
 
@@ -24,7 +28,11 @@
 <div id="page" class="site">
 
     <header id="masthead" class="site-header">
-			<nav class="navbar navbar-expand-xl navbar-light bg-light">
+			<?php if ( true == get_theme_mod( 'fixed_navbar', true ) ) : ?>
+				<nav id="fixed-nav" class="navbar navbar-expand-xl navbar-light fixed-top bg-light">
+			<?php else : ?>
+				<nav class="navbar navbar-expand-xl navbar-light bg-light">
+			<?php endif; ?>
 				<div class="container">
 					<?php strapcore_theme_logo(); ?>
 
@@ -40,4 +48,3 @@
 
 	<div class="container">
 	<div id="content" class="site-content">
-		<?php strapcore_breadcrumbs(); ?>

@@ -10,6 +10,8 @@
 get_header('bootstrap');
 ?>
 
+<?php strapcore_breadcrumbs_pages(); ?>
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
