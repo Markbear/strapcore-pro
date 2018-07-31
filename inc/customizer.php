@@ -210,4 +210,39 @@ if ( class_exists('Kirki') ) {
 		),
 	) );
 	
+	
+	/* Colors */	
+	Kirki::add_field( 'strapcore_theme', array(
+		'type'        => 'radio',
+		'settings'    => 'bootswatch',
+		'label'       => esc_attr__( 'Select your color scheme', 'strapcore' ),
+		'section'     => 'colors',
+		'default'     => 'default',
+		'priority'    => 10,
+		'choices'     => array(
+			'default' 	=> esc_attr__( 'Default', 'strapcore' ),
+			'cerulean.min.css'  => esc_attr__( 'Cerulean', 'strapcore' ),
+			'cosmo.min.css'     => esc_attr__( 'Cosmo', 'strapcore' ),
+			'cyborg.min.css'    => esc_attr__( 'Cyborg', 'strapcore' ),
+			'darkly.min.css'    => esc_attr__( 'Darkly', 'strapcore' ),
+			'flatly.min.css'    => esc_attr__( 'Flatly', 'strapcore' ),
+			'journal.min.css'   => esc_attr__( 'Journal', 'strapcore' ), 
+			'litera.min.css'    => esc_attr__( 'Litera', 'strapcore' ),
+			'lumen.min.css'     => esc_attr__( 'Lumen', 'strapcore' ),
+			'lux.min.css'     	=> esc_attr__( 'Lux', 'strapcore' ),
+			'materia.min.css'   => esc_attr__( 'Materia', 'strapcore' ),
+			'minty.min.css'     => esc_attr__( 'Minty', 'strapcore' ),
+			'pulse.min.css'     => esc_attr__( 'Pulse', 'strapcore' ),
+			'sandstone.min.css' => esc_attr__( 'Sandstone', 'strapcore' ),
+			'simplex.min.css'   => esc_attr__( 'Simplex', 'strapcore' ),
+			'sketchy.min.css'   => esc_attr__( 'sketchy', 'strapcore' ),
+			'slate.min.css'     => esc_attr__( 'Slate', 'strapcore' ),
+			'solar.min.css'   	=> esc_attr__( 'solar', 'strapcore' ),
+			'spacelab.min.css'  => esc_attr__( 'Spacelab', 'strapcore' ),
+			'superhero.min.css' => esc_attr__( 'Superhero', 'strapcore' ),
+			'united.min.css'    => esc_attr__( 'United', 'strapcore' ),
+			'yeti.min.css'      => esc_attr__( 'Yeti', 'strapcore' ),
+		),
+	) );
+	
 }
