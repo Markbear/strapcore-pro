@@ -11,21 +11,10 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php
-		the_title( '<h1 class="entry-title">', '</h1>' );
-
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php
-				strapcore_posted_on();
-				strapcore_posted_by();
-				strapcore_posted_in();
-				strapcore_posted_comments();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
+		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
+	
+	<?php strapcore_single_meta(); ?>
 
 	<?php strapcore_post_thumbnail(); ?>
 
@@ -51,12 +40,7 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php
-		strapcore_posted_tags();
-		strapcore_posted_edit();
-		?>
-	</footer><!-- .entry-footer -->
+	<?php strapcore_single_footer(); ?>
 	
 	<?php strapcore_author(); ?>
 	

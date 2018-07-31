@@ -181,6 +181,86 @@ if ( class_exists('Kirki') ) {
 	) );
 	
 	
+	/* Blog Settings */
+	Kirki::add_panel( 'blog_panel', array(
+		'priority'    => 10,
+		'title'       => esc_attr__( 'Blog Settings', 'strapcore-pro' ),
+		'description' => esc_attr__( '', 'strapcore-pro' ),
+	) );
+	
+	Kirki::add_section( 'blog_section', array(
+		'title'          => esc_attr__( 'Post Settings', 'strapcore-pro' ),
+		'description'    => esc_attr__( 'Control the settings for the blog posts.', 'strapcore-pro' ),
+		'panel'          => 'blog_panel',
+		'priority'       => 160,
+	) );
+	
+	Kirki::add_field( 'strapcore_theme', array(
+		'type'        => 'switch',
+		'settings'    => 'blog_entry_meta',
+		'label'       => esc_attr__( 'Enable or disable the post meta for blog posts on the index, archive and search pages', 'strapcore-pro' ),
+		'section'     => 'blog_section',
+		'default'     => '1',
+		'priority'    => 10,
+		'choices'     => array(
+			'on'  => esc_attr__( 'Enable', 'strapcore-pro' ),
+			'off' => esc_attr__( 'Disable', 'strapcore-pro' ),
+		),
+	) );
+	
+	Kirki::add_field( 'strapcore_theme', array(
+		'type'        => 'switch',
+		'settings'    => 'blog_footer',
+		'label'       => esc_attr__( 'Enable or disable the post footer for blog posts on the index, archive and search pages', 'strapcore-pro' ),
+		'section'     => 'blog_section',
+		'default'     => '1',
+		'priority'    => 10,
+		'choices'     => array(
+			'on'  => esc_attr__( 'Enable', 'strapcore-pro' ),
+			'off' => esc_attr__( 'Disable', 'strapcore-pro' ),
+		),
+	) );
+	
+	Kirki::add_field( 'strapcore_theme', array(
+		'type'        => 'switch',
+		'settings'    => 'single_entry_meta',
+		'label'       => esc_attr__( 'Enable or disable the post meta for the single posts', 'strapcore-pro' ),
+		'section'     => 'blog_section',
+		'default'     => '1',
+		'priority'    => 10,
+		'choices'     => array(
+			'on'  => esc_attr__( 'Enable', 'strapcore-pro' ),
+			'off' => esc_attr__( 'Disable', 'strapcore-pro' ),
+		),
+	) );
+	
+	Kirki::add_field( 'strapcore_theme', array(
+		'type'        => 'switch',
+		'settings'    => 'single_entry_footer',
+		'label'       => esc_attr__( 'Enable or disable the post footer for the single posts', 'strapcore-pro' ),
+		'section'     => 'blog_section',
+		'default'     => '1',
+		'priority'    => 10,
+		'choices'     => array(
+			'on'  => esc_attr__( 'Enable', 'strapcore-pro' ),
+			'off' => esc_attr__( 'Disable', 'strapcore-pro' ),
+		),
+	) );
+	
+	Kirki::add_field( 'strapcore_theme', array(
+		'type'        => 'switch',
+		'settings'    => 'author_meta_box',
+		'label'       => esc_attr__( 'Enable or disable the Author info box on single posts', 'strapcore-pro' ),
+		'section'     => 'blog_section',
+		'default'     => '1',
+		'priority'    => 10,
+		'choices'     => array(
+			'on'  => esc_attr__( 'Enable', 'strapcore-pro' ),
+			'off' => esc_attr__( 'Disable', 'strapcore-pro' ),
+		),
+	) );
+	
+	
 	/* Footer Settings */
 	Kirki::add_panel( 'footer_panel', array(
 		'priority'    => 10,
@@ -188,8 +268,8 @@ if ( class_exists('Kirki') ) {
 		'description' => esc_attr__( '', 'strapcore-pro' ),
 	) );
 	
-	Kirki::add_section( 'footer_widgets_section', array(
-		'title'          => esc_attr__( 'Footer Widgets', 'strapcore-pro' ),
+	Kirki::add_section( 'footer_content_section', array(
+		'title'          => esc_attr__( 'Footer Content', 'strapcore-pro' ),
 		'description'    => esc_attr__( 'Control the settings for the footer widgets.', 'strapcore-pro' ),
 		'panel'          => 'footer_panel',
 		'priority'       => 160,
@@ -199,7 +279,7 @@ if ( class_exists('Kirki') ) {
 		'type'        => 'radio',
 		'settings'    => 'display_footer_widgets',
 		'label'       => esc_attr__( 'Select number of footer widgets to display', 'strapcore-pro' ),
-		'section'     => 'footer_widgets_section',
+		'section'     => 'footer_content_section',
 		'default'     => 0,
 		'priority'    => 10,
 		'choices'     => array(
@@ -208,6 +288,15 @@ if ( class_exists('Kirki') ) {
 			2 => esc_attr__( '2 Widgets', 'strapcore-pro' ),
 			3  => esc_attr__( '3 Widgets', 'strapcore-pro' ),
 		),
+	) );
+	
+	Kirki::add_field( 'strapcore_theme', array(
+		'type'     => 'textarea',
+		'settings' => 'footer_colophon',
+		'label'    => __( 'Copyright Content', 'strapcore-pro' ),
+		'section'  => 'footer_content_section',
+		'default'  => esc_attr__( 'COPYRIGHT &copy; 2018 Strap Theme', 'strapcore-pro' ),
+		'priority' => 20,
 	) );
 	
 }

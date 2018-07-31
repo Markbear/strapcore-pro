@@ -198,57 +198,59 @@ function strapcore_comments_navigation(){
 }
 
 function strapcore_author(){
-	// Display author bio if post isn't password protected
-	if ( ! post_password_required() ) : ?>
-	
-	<?php if ( get_the_author_meta('description') != '' ) : ?>       
-		<div class="author-meta card">
-			<div class="card-body">
-				<div class="media">
-					<div class="">
-						<?php if (function_exists('get_avatar')) { echo get_avatar( get_the_author_meta( 'ID' ), 80 ); }?>
-					</div>
-					<div class="media-body">
-						<h5 class="card-title"><?php the_author_posts_link(); ?></h5>
-						<p><?php the_author_meta('description') ?></p>
-					</div>
-					
-				</div>
-			</div>
-			<div class="card-footer">
-				<?php
-				// Retrieve a custom field value
-				$twitterHandle = get_the_author_meta('twitter'); 
-				$fbHandle = get_the_author_meta('facebook');
-				$gHandle = get_the_author_meta('gplus');
-				$instHandle = get_the_author_meta('instagram');
-				$linkHandle = get_the_author_meta('linkedin');
-				?>
-				<?php if ( get_the_author_meta('twitter') != '' ) : ?>
-				<a href="http://twitter.com/<?php echo esc_html($twitterHandle); ?>" target="_blank"><i class="fab fa-twitter-square"></i></a>
-				<?php endif; // no twitter handle ?>
-
-				<?php if ( get_the_author_meta('facebook') != '' ) : ?>
-				<a href="<?php echo esc_url($fbHandle); ?>" target="_blank"><i class="fab fa-facebook"></i></a>
-				<?php endif; // no facebook url ?>
-
-				<?php if ( get_the_author_meta('gplus') != '' ) : ?>
-				<a href="<?php echo esc_url($gHandle); ?>" target="_blank"><i class="fab fa-google-plus-square"></i></a>
-				<?php endif; // no google+ url ?>
-				
-				<?php if ( get_the_author_meta('instagram') != '' ) : ?>
-				<a href="<?php echo esc_url($instHandle); ?>" target="_blank"><i class="fab fa-instagram"></i></a>
-				<?php endif; // no google+ url ?>
-				
-				<?php if ( get_the_author_meta('linkedin') != '' ) : ?>
-				<a href="<?php echo esc_url($linkHandle); ?>" target="_blank"><i class="fab fa-linkedin"></i></a>
-				<?php endif; // no google+ url ?>
-			</div>
-		</div><!-- end of #author-meta -->
-	<?php endif; // no description, no author's meta ?>
+	if ( true == get_theme_mod( 'author_meta_box', true ) ) :
+		// Display author bio if post isn't password protected
+		if ( ! post_password_required() ) : ?>
 		
-	<?php
-	//end password protection check 
+		<?php if ( get_the_author_meta('description') != '' ) : ?>       
+			<div class="author-meta card">
+				<div class="card-body">
+					<div class="media">
+						<div class="">
+							<?php if (function_exists('get_avatar')) { echo get_avatar( get_the_author_meta( 'ID' ), 80 ); }?>
+						</div>
+						<div class="media-body">
+							<h5 class="card-title"><?php the_author_posts_link(); ?></h5>
+							<p><?php the_author_meta('description') ?></p>
+						</div>
+						
+					</div>
+				</div>
+				<div class="card-footer">
+					<?php
+					// Retrieve a custom field value
+					$twitterHandle = get_the_author_meta('twitter'); 
+					$fbHandle = get_the_author_meta('facebook');
+					$gHandle = get_the_author_meta('gplus');
+					$instHandle = get_the_author_meta('instagram');
+					$linkHandle = get_the_author_meta('linkedin');
+					?>
+					<?php if ( get_the_author_meta('twitter') != '' ) : ?>
+					<a href="http://twitter.com/<?php echo esc_html($twitterHandle); ?>" target="_blank"><i class="fab fa-twitter-square"></i></a>
+					<?php endif; // no twitter handle ?>
+
+					<?php if ( get_the_author_meta('facebook') != '' ) : ?>
+					<a href="<?php echo esc_url($fbHandle); ?>" target="_blank"><i class="fab fa-facebook"></i></a>
+					<?php endif; // no facebook url ?>
+
+					<?php if ( get_the_author_meta('gplus') != '' ) : ?>
+					<a href="<?php echo esc_url($gHandle); ?>" target="_blank"><i class="fab fa-google-plus-square"></i></a>
+					<?php endif; // no google+ url ?>
+					
+					<?php if ( get_the_author_meta('instagram') != '' ) : ?>
+					<a href="<?php echo esc_url($instHandle); ?>" target="_blank"><i class="fab fa-instagram"></i></a>
+					<?php endif; // no google+ url ?>
+					
+					<?php if ( get_the_author_meta('linkedin') != '' ) : ?>
+					<a href="<?php echo esc_url($linkHandle); ?>" target="_blank"><i class="fab fa-linkedin"></i></a>
+					<?php endif; // no google+ url ?>
+				</div>
+			</div><!-- end of #author-meta -->
+		<?php endif; // no description, no author's meta ?>
+			
+		<?php
+		//end password protection check 
+		endif;
 	endif;
 }
 
@@ -303,4 +305,57 @@ function strapcore_social_icons(){
 	if( $linkedin != '') : ?>
 		<a href="<?php echo $linkedin; ?>"><i class="fab fa-linkedin"></i></a>
 	<?php endif;
+}
+
+
+function strapcore_blog_meta() {
+	if ( true == get_theme_mod( 'blog_entry_meta', true ) ) : ?>
+		<div class="card-header">
+				<div class ="entry-meta">
+					<?php
+					strapcore_posted_on();
+					strapcore_posted_by();
+					strapcore_posted_in();
+					strapcore_posted_comments();
+					?>
+				</div>
+		</div>
+	<?php endif; 
+}
+
+function strapcore_blog_footer() {
+	if ( true == get_theme_mod( 'blog_footer', true ) ) : ?>
+		<div class="card-footer text-muted">
+			<div class ="entry-meta">
+				<?php
+				strapcore_posted_tags();
+				strapcore_posted_edit();
+				?>
+			</div>
+		</div>
+	<?php endif; 
+}
+
+function strapcore_single_meta() {
+	if ( true == get_theme_mod( 'single_entry_meta', true ) ) : ?>
+		<div class="entry-meta">
+			<?php
+			strapcore_posted_on();
+			strapcore_posted_by();
+			strapcore_posted_in();
+			strapcore_posted_comments();
+			?>
+		</div><!-- .entry-meta -->
+	<?php endif; 
+}
+
+function strapcore_single_footer() {
+	if ( true == get_theme_mod( 'single_entry_footer', true ) ) : ?>
+		<footer class="entry-footer">
+			<?php
+			strapcore_posted_tags();
+			strapcore_posted_edit();
+			?>
+		</footer><!-- .entry-footer -->
+	<?php endif; 
 }

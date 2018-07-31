@@ -19,3 +19,12 @@ function strapcore_footer_menu() {
 	<?php }
 	
 }
+
+function strapcore_colphon() {
+	$colophon_content = get_theme_mod('footer_colophon');
+	if ($colophon_content != ''):
+		echo $colophon_content;
+	else : ?>
+		COPYRIGHT &copy; <?php echo date("Y"); ?> <a href="">Strap Themes</a>
+	<?php endif; 
+}

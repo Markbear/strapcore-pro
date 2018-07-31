@@ -15,16 +15,9 @@
 			<div class="card-img-top">
 				<?php strapcore_post_thumbnail(); ?>
 			</div>
-			<div class="card-header">
-				<div class ="entry-meta">
-					<?php
-					strapcore_posted_on();
-					strapcore_posted_by();
-					strapcore_posted_in();
-					strapcore_posted_comments();
-					?>
-				</div>
-			</div>
+			
+			<?php strapcore_blog_meta(); ?>
+			
 			<div class="card-body">
 				<header class="card-title entry-header">
 					<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
@@ -54,14 +47,9 @@
 					<p><a class="more-link" href="<?php echo esc_url( get_permalink() ); ?>"><button class="btn btn-light">Read More...</button></a></p>
 				</footer><!-- .entry-footer -->
 			</div>
-			<div class="card-footer text-muted">
-				<div class ="entry-meta">
-					<?php
-					strapcore_posted_tags();
-					strapcore_posted_edit();
-					?>
-				</div>
-			</div>
+			
+			<?php strapcore_blog_footer(); ?>
+			
 		</div>
 	</article><!-- #post-<?php the_ID(); ?> -->
 </div>
