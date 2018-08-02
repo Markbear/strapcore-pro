@@ -162,7 +162,7 @@ if ( class_exists('Kirki') ) {
 	
 	Kirki::add_section( 'header_section', array(
 		'title'          => esc_attr__( 'Navigation Bar Settings', 'strapcore-pro' ),
-		'description'    => esc_attr__( 'Control the settings for the nvigation bar.', 'strapcore-pro' ),
+		'description'    => esc_attr__( 'Control the settings for the navigation bar.', 'strapcore-pro' ),
 		'panel'          => 'header_panel',
 		'priority'       => 160,
 	) );
@@ -179,6 +179,46 @@ if ( class_exists('Kirki') ) {
 			'off' => esc_attr__( 'Disable', 'strapcore-pro' ),
 		),
 	) );
+	
+	Kirki::add_section( 'topbar_section', array(
+		'title'          => esc_attr__( 'Top Bar Settings', 'strapcore-pro' ),
+		'description'    => esc_attr__( 'Control the settings for the top bar above the navigation.', 'strapcore-pro' ),
+		'panel'          => 'header_panel',
+		'priority'       => 160,
+	) );
+	
+	Kirki::add_field( 'strapcore_theme', array(
+		'type'        => 'switch',
+		'settings'    => 'enable_topbar',
+		'label'       => esc_attr__( 'Enable or disable the top bar above the main navigation', 'strapcore-pro' ),
+		'section'     => 'topbar_section',
+		'default'     => '1',
+		'priority'    => 10,
+		'choices'     => array(
+			'on'  => esc_attr__( 'Enable', 'strapcore-pro' ),
+			'off' => esc_attr__( 'Disable', 'strapcore-pro' ),
+		),
+	) );
+	
+	Kirki::add_field( 'strapcore_theme', array(
+		'type'     => 'text',
+		'settings' => 'topbar_phone',
+		'label'    => __( 'Phone Number', 'strapcore-pro' ),
+		'section'  => 'topbar_section',
+		'default'  => esc_attr__( '0123456789', 'strapcore-pro' ),
+		'priority' => 10,
+	) );
+	
+	Kirki::add_field( 'strapcore_theme', array(
+		'type'     => 'text',
+		'settings' => 'topbar_email',
+		'label'    => __( 'Email Address', 'strapcore-pro' ),
+		'section'  => 'topbar_section',
+		'default'  => esc_attr__( 'example@example.com', 'strapcore-pro' ),
+		'priority' => 10,
+	) );
+	
+
 	
 	
 	/* Blog Settings */
@@ -259,6 +299,123 @@ if ( class_exists('Kirki') ) {
 			'off' => esc_attr__( 'Disable', 'strapcore-pro' ),
 		),
 	) );
+	
+	/* Projects Settings */
+	Kirki::add_panel( 'projects_panel', array(
+		'priority'    => 10,
+		'title'       => esc_attr__( 'Projects Settings', 'strapcore-pro' ),
+		'description' => esc_attr__( '', 'strapcore-pro' ),
+	) );
+	
+	Kirki::add_section( 'projects_section', array(
+		'title'          => esc_attr__( 'Projects Settings', 'strapcore-pro' ),
+		'description'    => esc_attr__( 'Control the settings for the projects section.', 'strapcore-pro' ),
+		'panel'          => 'projects_panel',
+		'priority'       => 160,
+	) );
+	
+	Kirki::add_field( 'strapcore_theme', array(
+		'type'     => 'text',
+		'settings' => 'projects_heading',
+		'label'    => __( 'Projects Page Heading', 'strapcore-pro' ),
+		'section'  => 'projects_section',
+		'default'  => esc_attr__( 'Our Projects', 'strapcore-pro' ),
+		'priority' => 10,
+	) );
+	
+	Kirki::add_field( 'strapcore_theme', array(
+		'type'     => 'textarea',
+		'settings' => 'projects_content',
+		'label'    => __( 'Projects Page Content', 'strapcore-pro' ),
+		'section'  => 'projects_section',
+		'default'  => esc_attr__( 'Looking for inspiration? Take a look at some of our latest projects.', 'strapcore-pro' ),
+		'priority' => 20,
+	) );
+	
+	
+	/* Services Settings */
+/*	Kirki::add_panel( 'services_panel', array(
+		'priority'    => 10,
+		'title'       => esc_attr__( 'Services Settings', 'strapcore-pro' ),
+		'description' => esc_attr__( '', 'strapcore-pro' ),
+	) );*/
+	
+	Kirki::add_section( 'services_section', array(
+		'title'          => esc_attr__( 'Services', 'strapcore-pro' ),
+		'description'    => esc_attr__( 'Control the settings for the services section.', 'strapcore-pro' ),
+		//'panel'          => 'projects_panel',
+		'priority'       => 10,
+	) );
+	
+	Kirki::add_field( 'strapcore_theme', array(
+		'type'     => 'text',
+		'settings' => 'services_heading',
+		'label'    => __( 'Services Page Heading', 'strapcore-pro' ),
+		'section'  => 'services_section',
+		'default'  => esc_attr__( 'Our Services', 'strapcore-pro' ),
+		'priority' => 10,
+	) );
+	
+	Kirki::add_field( 'strapcore_theme', array(
+		'type'     => 'textarea',
+		'settings' => 'services_content',
+		'label'    => __( 'Projects Page Content', 'strapcore-pro' ),
+		'section'  => 'services_section',
+		'default'  => esc_attr__( 'We have a range of services. Learn  more below or get in touch today.', 'strapcore-pro' ),
+		'priority' => 20,
+	) );
+	
+	Kirki::add_field( 'strapcore_theme', array(
+		'type'     => 'text',
+		'settings' => 'services_button_link',
+		'label'    => __( 'Contact Page Link', 'strapcore-pro' ),
+		'section'  => 'services_section',
+		'default'  => esc_attr__( '#', 'strapcore-pro' ),
+		'priority' => 30,
+	) );
+	
+	Kirki::add_field( 'strapcore_theme', array(
+		'type'     => 'text',
+		'settings' => 'services_button',
+		'label'    => __( 'Button Text', 'strapcore-pro' ),
+		'section'  => 'services_section',
+		'default'  => esc_attr__( 'Contact Us', 'strapcore-pro' ),
+		'priority' => 40,
+	) );
+	
+	
+		/* Services Settings */
+/*	Kirki::add_panel( 'services_panel', array(
+		'priority'    => 10,
+		'title'       => esc_attr__( 'Services Settings', 'strapcore-pro' ),
+		'description' => esc_attr__( '', 'strapcore-pro' ),
+	) );*/
+	
+	Kirki::add_section( 'teams_section', array(
+		'title'          => esc_attr__( 'Teams', 'strapcore-pro' ),
+		'description'    => esc_attr__( 'Control the settings for the teams section.', 'strapcore-pro' ),
+		//'panel'          => 'projects_panel',
+		'priority'       => 10,
+	) );
+	
+	Kirki::add_field( 'strapcore_theme', array(
+		'type'     => 'text',
+		'settings' => 'team_heading',
+		'label'    => __( 'Team Page Heading', 'strapcore-pro' ),
+		'section'  => 'teams_section',
+		'default'  => esc_attr__( 'Our Team', 'strapcore-pro' ),
+		'priority' => 10,
+	) );
+	
+	Kirki::add_field( 'strapcore_theme', array(
+		'type'     => 'textarea',
+		'settings' => 'team_content',
+		'label'    => __( 'Team Page Content', 'strapcore-pro' ),
+		'section'  => 'team_section',
+		'default'  => esc_attr__( 'Learn more about our fantastic team below.', 'strapcore-pro' ),
+		'priority' => 20,
+	) );
+	
 	
 	
 	/* Footer Settings */

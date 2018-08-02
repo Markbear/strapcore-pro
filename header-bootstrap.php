@@ -27,12 +27,34 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 
-    <header id="masthead" class="site-header">
-			<?php if ( true == get_theme_mod( 'fixed_navbar', true ) ) : ?>
-				<nav id="fixed-nav" class="navbar navbar-expand-xl navbar-light fixed-top bg-light">
-			<?php else : ?>
-				<nav class="navbar navbar-expand-xl navbar-light bg-light">
-			<?php endif; ?>
+	<?php if ( true == get_theme_mod( 'fixed_navbar', true ) ) : ?>
+		<header id="masthead" class="site-header fixed-top">
+	<?php else : ?>
+		<header id="masthead" class="site-header">
+	<?php endif; ?>
+	
+	
+		<?php if ( true == get_theme_mod( 'enable_topbar', true ) ) : ?>
+			<div class="topbar">
+				<nav class="navbar navbar-expand navbar-dark bg-dark">
+					<div class="container">
+						<div class="col-md-6 contact-info">
+							<?php if ( get_theme_mod( 'topbar_phone' ) != '' ) : ?>
+								<i class="fas fa-phone"></i><?php echo get_theme_mod( 'topbar_phone' );?>
+							<?php endif; ?>
+							<?php if ( get_theme_mod( 'topbar_email' ) != '' ) : ?>
+								<i class="fas fa-envelope"></i><?php echo get_theme_mod( 'topbar_email' );?>
+							<?php endif; ?>
+						</div>
+						<div class="col-md-6 social-icons">
+							<?php strapcore_social_icons(); ?>
+						</div>
+					</div>
+				</nav><!-- .topbar -->
+			</div>
+		<?php endif; ?>
+			
+			<nav class="navbar navbar-expand-xl navbar-light bg-light">
 				<div class="container">
 					<?php strapcore_theme_logo(); ?>
 
@@ -47,5 +69,3 @@
 	</header><!-- .site-header -->
 
 	<div id="content" class="site-content">
-	<div class="container">
-	<div class="row">

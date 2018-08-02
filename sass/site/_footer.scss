@@ -15,12 +15,16 @@
 	}
 	
 	.footer-social {
-		
-		a {
+	
+		.social-links {
 			float: right;
-			font-size: 32px;
-			margin-left: 10px;
+			
+			a {		
+				font-size: 32px;
+				margin-left: 10px;
+			}
 		}
+		
 	}
 	
 	.strapcore-pro-footer-menu {

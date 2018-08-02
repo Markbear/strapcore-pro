@@ -1,0 +1,30 @@
+.topbar {
+	color: $color__primary;
+	
+	.contact-info svg {
+		margin-top: -3px;
+		margin-right: 5px;
+			
+		&:last-child {
+			margin-left: 10px;
+		}
+	}
+	
+	.social-links {
+		float: right;
+		
+		a {
+			margin-right: 5px;
+			font-size: 24px;
+			color: $color__primary;
+			
+			svg {
+				margin-top: -3px;
+			}
+		}
+		
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}

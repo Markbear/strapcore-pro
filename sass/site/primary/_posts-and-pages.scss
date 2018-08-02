@@ -23,11 +23,12 @@
 .site-content {
 	@include make-row();
 	word-break: break-word; 
-	padding: 20px 0;
+	padding-bottom: 20px;
 	
 	.breadcrumbs {
 		@include make-col-ready();
 		@include make-col(12);	
+		margin-top: 20px;
 		
 		svg {
 			margin-top: -3px;

@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all single posts
+ * The template for displaying all single project items
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
@@ -15,14 +15,14 @@ get_header('bootstrap');
 		
 			<?php strapcore_breadcrumbs_pages(); ?>
 
-			<div id="primary" class="content-area">
+			<div id="primary" class="full-content-area">
 				<main id="main" class="site-main">
 
 				<?php
 				while ( have_posts() ) :
 					the_post();
 
-					get_template_part( 'template-parts/content', 'single' );
+					get_template_part( 'template-parts/content', 'project' );
 
 					//the_post_navigation();
 					strapcore_post_navigation();			
@@ -41,5 +41,4 @@ get_header('bootstrap');
 			</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();

@@ -289,7 +289,9 @@ function strapcore_social_icons(){
 	$instagram = get_theme_mod('instagram_social'); 
 	$google = get_theme_mod('google_social'); 
 	$linkedin = get_theme_mod('linkedin_social'); 
-
+	?>
+	<div class="social-links">
+	<?php
 	if( $facebook != '') : ?>
 		<a href="<?php echo $facebook; ?>"><i class="fab fa-facebook-square"></i></a>
 	<?php endif;
@@ -304,7 +306,9 @@ function strapcore_social_icons(){
 	<?php endif; 
 	if( $linkedin != '') : ?>
 		<a href="<?php echo $linkedin; ?>"><i class="fab fa-linkedin"></i></a>
-	<?php endif;
+	<?php endif; ?>
+	</div>
+<?php 
 }
 
 
@@ -396,9 +400,9 @@ function strapcore_contact_form() {
 			if (!isset($emailTo) || ($emailTo == '') ){
 				$emailTo = get_option('admin_email');
 			}
-			$subject = __('From ','stanleywp').$name;
-			$body = __('Name: ','stanleywp').$name."\n".__('Email: ','stanleywp').$email."\n".__('Comments: ','stanleywp').$comments;
-			$headers = __('From: ','stanleywp') .$name. ' <'.$emailTo.'>' . "\r\n" . __('Reply-To:','stanleywp') .$name. '<'.$email.'>';
+			$subject = __('From ','strapcore-pro').$name;
+			$body = __('Name: ','strapcore-pro').$name."\n".__('Email: ','strapcore-pro').$email."\n".__('Comments: ','strapcore-pro').$comments;
+			$headers = __('From: ','strapcore-pro') .$name. ' <'.$emailTo.'>' . "\r\n" . __('Reply-To:','strapcore-pro') .$name. '<'.$email.'>';
 	 
 			wp_mail($emailTo, $subject, $body, $headers);
 			$emailSent = true;
@@ -408,13 +412,13 @@ function strapcore_contact_form() {
 	
 	if(isset($emailSent) && $emailSent == true) { ?>
 		<div class="alert alert-success" role="alert">
-			<?php _e('Thanks, your email was sent successfully.', 'stanleywp'); ?>
+			<?php _e('Thanks, your email was sent successfully.', 'strapcore-pro'); ?>
 		</div>
 	<?php } else { ?>
 
 		<?php if(isset($hasError) || isset($captchaError)) { ?>
 			<div class="alert alert-danger alert-dismissible fade show" role="alert">
-			  <strong><?php _e('Error!', 'stanleywp'); ?></strong> <?php _e('Please try again.', 'stanleywp'); ?>
+			  <strong><?php _e('Error!', 'strapcore-pro'); ?></strong> <?php _e('Please try again.', 'strapcore-pro'); ?>
 			  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
 				<span aria-hidden="true">&times;</span>
 			  </button>
@@ -423,40 +427,97 @@ function strapcore_contact_form() {
 
 		<form action="<?php the_permalink(); ?>" id="contactForm" method="post">
 			<div class="form-group">
-				<label class="control-label" for="contactName"><?php _e('Name', 'stanleywp'); ?></label>
+				<label class="control-label" for="contactName"><?php _e('Name', 'strapcore-pro'); ?></label>
 				<input class="form-control <?php if(isset($nameError)) { echo "is-invalid"; }?>" type="text" name="contactName" id="contactName" value="<?php echo isset($_POST["contactName"]) ? $_POST["contactName"] : ''; ?>" />
 				<?php if(isset($nameError)) { ?>
 					<div class="invalid-feedback">
-						<?php _e('Please provide a valid name.', 'stanleywp'); ?>
+						<?php _e('Please provide a valid name.', 'strapcore-pro'); ?>
 					  </div>
 				<?php } ?>
 		  
 		   </div>
 		   <div class="form-group">
-				<label class="control-label" for="email"><?php _e('Email', 'stanleywp'); ?></label>
+				<label class="control-label" for="email"><?php _e('Email', 'strapcore-pro'); ?></label>
 				<input class="form-control <?php if(isset($emailError)) { echo "is-invalid"; }?>" type="text" name="email" id="email" value="<?php echo isset($_POST["email"]) ? $_POST["email"] : ''; ?>" />
 				<?php if(isset($emailError)) { ?>
 					<div class="invalid-feedback">
-						<?php _e('Please provide a valid email.', 'stanleywp'); ?>
+						<?php _e('Please provide a valid email.', 'strapcore-pro'); ?>
 					  </div>
 				<?php } ?>
 		   
 		   </div>
 			<div class="form-group">
-				<label class="control-label" for="commentsText"><?php _e('Message', 'stanleywp'); ?></label>
+				<label class="control-label" for="commentsText"><?php _e('Message', 'strapcore-pro'); ?></label>
 		   
 				<textarea class="form-control <?php if(isset($commentError)) { echo "is-invalid"; }?>" name="comments" id="commentsText" rows="10" cols="20"><?php echo isset($_POST["comments"]) ? $_POST["comments"] : ''; ?></textarea>
 				 <?php if(isset($commentError)) { ?>
 					<div class="invalid-feedback">
-						<?php _e('Please provide comments.', 'stanleywp'); ?>
+						<?php _e('Please provide comments.', 'strapcore-pro'); ?>
 					  </div>
 				<?php } ?>
 			
 		   </div>
 		   <div class="form-actions">
-				<button type="submit" class="btn btn-primary"><?php _e('Send Email', 'stanleywp'); ?></button>
+				<button type="submit" class="btn btn-primary"><?php _e('Send Email', 'strapcore-pro'); ?></button>
 				<input type="hidden" name="submitted" id="submitted" value="true" />
 		   </div>
 		</form>
 	<?php }
 } 
+
+function strapcore_latest_projects() {
+	// Define our WP Query Parameters - https://developer.wordpress.org/reference/classes/wp_query/
+	$args = array(
+		'post_type' => 'projects',
+		'posts_per_page' => 3,
+	);
+	$the_query = new WP_Query( $args );
+	 
+	while ($the_query -> have_posts('')) : $the_query -> the_post();
+	?>
+	
+	<div class="col-md-3 col-sm-6 mb-4">
+		<div class="card">
+			<div class="card-img-top">
+			<?php if ( has_post_thumbnail() ) { ?>
+				<a href="<?php the_permalink() ?>"><?php the_post_thumbnail(); ?></a>
+			<?php } ?>
+			</div>
+		<div class="card-body">
+			<h5 class="card-title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h5>
+		</div>
+		 
+		<?php // the_excerpt(); ?>
+		</div>
+	</div>
+	<?php endwhile;
+	wp_reset_postdata();
+}
+
+function strapcore_team_members() {
+	// Define our WP Query Parameters - https://developer.wordpress.org/reference/classes/wp_query/
+	$args = array(
+		'post_type' => 'teams',
+	);
+	$the_query = new WP_Query( $args );
+	 
+	while ($the_query -> have_posts('')) : $the_query -> the_post();
+	?>
+	
+	<div class="col-md-3 col-sm-6 mb-4">
+		<div class="card">
+			<div class="card-img-top">
+			<?php if ( has_post_thumbnail() ) { ?>
+				<a href="<?php the_permalink() ?>"><?php the_post_thumbnail(); ?></a>
+			<?php } ?>
+			</div>
+		<div class="card-body">
+			<h5 class="card-title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h5>
+		</div>
+		 
+		<?php // the_excerpt(); ?>
+		</div>
+	</div>
+	<?php endwhile;
+	wp_reset_postdata();
+}

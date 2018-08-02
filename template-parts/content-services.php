@@ -8,15 +8,12 @@
  */
 
 ?>
-
-<div class="strapcore-pro-blog">
+<div class="col-md-4">
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		<div class="card">
+		<div class="card mb-4 shadow-sm">
 			<div class="card-img-top">
 				<?php strapcore_post_thumbnail(); ?>
 			</div>
-			
-			<?php strapcore_blog_meta(); ?>
 			
 			<div class="card-body">
 				<header class="card-title entry-header">
@@ -43,12 +40,10 @@
 					) );
 					?>
 				</div><!-- .entry-content -->
-				<footer class="entry-footer">
+				<footer class="entry-footer d-flex justify-content-between align-items-center">
 					<p><a class="more-link" href="<?php echo esc_url( get_permalink() ); ?>"><button class="btn btn-light">Read More...</button></a></p>
 				</footer><!-- .entry-footer -->
 			</div>
-			
-			<?php strapcore_blog_footer(); ?>
 			
 		</div>
 	</article><!-- #post-<?php the_ID(); ?> -->
