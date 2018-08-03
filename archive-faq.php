@@ -11,8 +11,8 @@ get_header('bootstrap');
 ?>
 
 <?php 
-if (get_theme_mod('projects_header_image') != ''):
-	$img_url = get_theme_mod('projects_header_image'); ?>
+if (get_theme_mod('faq_header_image') != ''):
+	$img_url = get_theme_mod('faq_header_image'); ?>
 	<div class="container-fluid">
 		<div class="row">
 			<div class="header-img mx-auto">
@@ -22,32 +22,26 @@ if (get_theme_mod('projects_header_image') != ''):
 	</div>	
 <?php endif;
 ?>
-
+				
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 		
 			<?php strapcore_breadcrumbs_pages(); ?>
 
 			<?php if ( have_posts() ) : ?>
-
-				<header class="page-header">
-					<div class="container">	
-						<div class="row">
-							<div class="col-md-12 mb-4">
-								<h1 class="page-title mb-4">
-									<?php if ( get_theme_mod( 'projects_heading' ) != '') :
-										echo get_theme_mod('projects_heading', 'Our Projects');
-									endif; ?>
-								</h1>
-								<p>
-									<?php if ( get_theme_mod( 'projects_content' ) != '') :
-										echo get_theme_mod('projects_content', 'Looking for inspiration? Take a look at some of our latest projects.');
-									endif; ?>
-								</p>
-							</div>
-						</div>
-					</div>
-				</header><!-- .page-header -->
+			
+			<header class="page-header jumbotron text-center">
+				<h1 class="page-title jumbotron-heading">
+					<?php if ( get_theme_mod( 'faq_heading' ) != '') :
+						echo get_theme_mod('faq_heading', 'Our Services');
+					endif; ?>
+				</h1>
+				<p class="lead text-muted">
+					<?php if ( get_theme_mod( 'faq_content' ) != '') :
+						echo get_theme_mod('faq_content', 'We have a range of services. Learn  more below or get in touch today.');
+					endif; ?>
+				</p>
+			</header><!-- .page-header -->
 
 				<section class="page-content">
 					<?php
@@ -60,14 +54,14 @@ if (get_theme_mod('projects_header_image') != ''):
 						 * If you want to override this in a child theme, then include a file
 						 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 						 */
-						get_template_part( 'template-parts/content', 'projects' );
-	
+						get_template_part( 'template-parts/content', get_post_type() );
+
 					endwhile;
 					?>
 				</section>
 
 			<?php strapcore_posts_navigation(); ?>
-			
+					
 			<?php else : ?>
 					
 				<div class="container">	

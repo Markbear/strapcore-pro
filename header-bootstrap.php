@@ -33,7 +33,6 @@
 		<header id="masthead" class="site-header">
 	<?php endif; ?>
 	
-	
 		<?php if ( true == get_theme_mod( 'enable_topbar', true ) ) : ?>
 			<div class="topbar">
 				<nav class="navbar navbar-expand navbar-dark bg-dark">

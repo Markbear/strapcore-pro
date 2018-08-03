@@ -4,6 +4,9 @@
  */
 function strapcore_breadcrumbs() {
 	if ( true == get_theme_mod( 'enable_breadcrumbs', true ) ) :
+			echo '<div class="container">';
+			echo '<div class="row">';
+			echo '<div class="col-md-12">';
 			echo '<div class="breadcrumbs">';
 			echo '<ol class="breadcrumb">';
 			echo '<li class="breadcrumb-item"><a href="';
@@ -32,6 +35,9 @@ function strapcore_breadcrumbs() {
 					echo '</li>';
 				}
 			echo '</ol>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div>';
 			echo '</div>';
 	endif;
 }

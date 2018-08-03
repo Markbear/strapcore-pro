@@ -10,23 +10,29 @@
 get_header('bootstrap');
 ?>
 
-	<div class="container">
-		<div class="row">
+<?php strapcore_header_image(); ?>
+				
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main">
 		
-			<?php strapcore_breadcrumbs_pages(); ?>
+			<?php strapcore_breadcrumbs(); ?>
 
-			<div id="primary" class="content-area">
-				<main id="main" class="site-main">
+			<?php if ( have_posts() ) : ?>
+			
+				<header class="page-header mb-4">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">				
+								<?php
+								the_archive_title( '<h1 class="page-title">', '</h1>' );
+								the_archive_description( '<div class="archive-description">', '</div>' );
+								?>
+							</div>
+						</div>
+					</div>
+				</header><!-- .page-header -->
 
-				<?php if ( have_posts() ) : ?>
-
-					<header class="page-header">
-						<?php
-						the_archive_title( '<h1 class="page-title">', '</h1>' );
-						the_archive_description( '<div class="archive-description">', '</div>' );
-						?>
-					</header><!-- .page-header -->
-
+				<section class="page-content">
 					<?php
 					/* Start the Loop */
 					while ( have_posts() ) :
@@ -40,19 +46,23 @@ get_header('bootstrap');
 						get_template_part( 'template-parts/content', get_post_type() );
 
 					endwhile;
+					?>
+				</section>
 
-					the_posts_navigation();
+			<?php strapcore_posts_navigation(); ?>
+					
+			<?php else : ?>
+					
+				<div class="container">	
+					<div class="row">
+						<?php get_template_part( 'template-parts/content', 'none' ); ?>
+					</div>
+				</div>
+			
+			<?php endif; ?>
 
-				else :
-
-					get_template_part( 'template-parts/content', 'none' );
-
-				endif;
-				?>
-
-				</main><!-- #main -->
-			</div><!-- #primary -->
+		</main><!-- #main -->
+	</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();

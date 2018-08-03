@@ -7,10 +7,12 @@
  * @package Strapcore-Pro
  */
 
+ 
+/**
+ * Prints HTML with meta information for the current post-date/time.
+ */
 if ( ! function_exists( 'strapcore_posted_on' ) ) :
-	/**
-	 * Prints HTML with meta information for the current post-date/time.
-	 */
+	
 	function strapcore_posted_on() {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
@@ -35,10 +37,11 @@ if ( ! function_exists( 'strapcore_posted_on' ) ) :
 	}
 endif;
 
+/**
+ * Prints HTML with meta information for the current author.
+ */
 if ( ! function_exists( 'strapcore_posted_by' ) ) :
-	/**
-	 * Prints HTML with meta information for the current author.
-	 */
+	
 	function strapcore_posted_by() {
 		$byline = sprintf(
 			/* translators: %s: post author. */
@@ -51,10 +54,11 @@ if ( ! function_exists( 'strapcore_posted_by' ) ) :
 	}
 endif;
 
+/**
+ * Displays the categories posted in
+ */
 if ( ! function_exists( 'strapcore_posted_in' ) ) :
-	/**
-	 * Prints HTML with meta information for the current author.
-	 */
+
 	function strapcore_posted_in() {
 		
 		/* translators: used between list items, there is a space after the comma */
@@ -67,10 +71,11 @@ if ( ! function_exists( 'strapcore_posted_in' ) ) :
 	}
 endif;
 
+/**
+ * Displays the tags list
+ */
 if ( ! function_exists( 'strapcore_posted_tags' ) ) :
-	/**
-	 * Prints HTML with meta information for the current author.
-	 */
+
 	function strapcore_posted_tags() {
 		
 		/* translators: used between list items, there is a space after the comma */
@@ -83,10 +88,11 @@ if ( ! function_exists( 'strapcore_posted_tags' ) ) :
 	}
 endif;
 
+/**
+ * Displays the edit post link
+ */
 if ( ! function_exists( 'strapcore_posted_edit' ) ) :
-	/**
-	 * Prints HTML with meta information for the current author.
-	 */
+
 	function strapcore_posted_edit() {
 		
 		edit_post_link(
@@ -109,10 +115,11 @@ if ( ! function_exists( 'strapcore_posted_edit' ) ) :
 	}
 endif;
 
+/**
+ * Displays comment count 
+ */
 if ( ! function_exists( 'strapcore_posted_comments' ) ) :
-	/**
-	 * Prints HTML with meta information for the categories, tags and comments.
-	 */
+
 	function strapcore_posted_comments() {
 
 		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
@@ -135,6 +142,40 @@ if ( ! function_exists( 'strapcore_posted_comments' ) ) :
 		}
 	}
 endif;
+
+/**
+ * Function displaying the date, author, category and comments meta data on odex pages
+ */
+function strapcore_blog_meta() {
+	if ( true == get_theme_mod( 'blog_entry_meta', true ) ) : ?>
+		<div class="card-header">
+				<div class ="entry-meta">
+					<?php
+					strapcore_posted_on();
+					strapcore_posted_by();
+					strapcore_posted_in();
+					strapcore_posted_comments();
+					?>
+				</div>
+		</div>
+	<?php endif; 
+}
+
+/**
+ * Function displaying the tags and edit post link at the footer on index pages
+ */
+function strapcore_blog_footer() {
+	if ( true == get_theme_mod( 'blog_footer', true ) ) : ?>
+		<div class="card-footer text-muted">
+			<div class ="entry-meta">
+				<?php
+				strapcore_posted_tags();
+				strapcore_posted_edit();
+				?>
+			</div>
+		</div>
+	<?php endif; 
+}
 
 if ( ! function_exists( 'strapcore_post_thumbnail' ) ) :
 	/**
@@ -172,24 +213,45 @@ if ( ! function_exists( 'strapcore_post_thumbnail' ) ) :
 	}
 endif;
 
+/**
+ * Index page posts navigation
+ */
 function strapcore_posts_navigation(){
 	?>
-	<div class="strapcore-pro-post-nav">
-		<?php previous_posts_link('<button id="previous-post" class="btn btn-light"><i class="fas fa-arrow-circle-left"></i> Newer</button>'); ?>
-		<?php next_posts_link('<button id="next-post" class="btn btn-light">Older <i class="fas fa-arrow-circle-right"></i></button>'); ?>
+	<div class="strapcore-pro-posts-nav">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<?php previous_posts_link('<button id="previous-post" class="btn btn-light"><i class="fas fa-arrow-circle-left"></i> Newer</button>'); ?>
+					<?php next_posts_link('<button id="next-post" class="btn btn-light">Older <i class="fas fa-arrow-circle-right"></i></button>'); ?>
+				</div>
+			</div>
+		</div>
 	</div>
 	<?php
 }
 
+/**
+ * Single posts navigation
+ */
 function strapcore_post_navigation(){
 	?>
 	<div class="strapcore-pro-post-nav">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
 		<?php previous_post_link('<button id="previous-post" class="btn btn-light">%link</button>', _x( '<i class="fas fa-arrow-circle-left"></i> %title', 'Previous post link', 'strapcore-pro' ) ); ?>
 		<?php next_post_link('<button id="next-post" class="btn btn-light">%link</button>',     _x( '%title <i class="fas fa-arrow-circle-right"></i>', 'Next post link', 'strapcore-pro' ) ); ?>
+				</div>
+			</div>
+		</div>
 	</div>
 	<?php
 }
 
+/**
+ * Comments navigation
+ */
 function strapcore_comments_navigation(){
 	?>
 		<?php previous_comments_link('<button id="previous-comment" class="btn btn-light"><i class="fas fa-arrow-circle-left"></i> Newer</button>'); ?>
@@ -197,6 +259,9 @@ function strapcore_comments_navigation(){
 	<?php
 }
 
+/**
+ * Author info box
+ */
 function strapcore_author(){
 	if ( true == get_theme_mod( 'author_meta_box', true ) ) :
 		// Display author bio if post isn't password protected
@@ -254,6 +319,9 @@ function strapcore_author(){
 	endif;
 }
 
+/**
+ * Additionlal ields added to user profile pages in the WP admin
+ */
 function strapcore_author_contact($profile_fields) {
 
 	// Add new fields
@@ -282,7 +350,6 @@ function strapcore_search_highlight() {
 /**
  * Social Icons
  */
- 
 function strapcore_social_icons(){
 	$facebook = get_theme_mod('facebook_social'); 
 	$twitter = get_theme_mod('twitter_social'); 
@@ -311,35 +378,9 @@ function strapcore_social_icons(){
 <?php 
 }
 
-
-function strapcore_blog_meta() {
-	if ( true == get_theme_mod( 'blog_entry_meta', true ) ) : ?>
-		<div class="card-header">
-				<div class ="entry-meta">
-					<?php
-					strapcore_posted_on();
-					strapcore_posted_by();
-					strapcore_posted_in();
-					strapcore_posted_comments();
-					?>
-				</div>
-		</div>
-	<?php endif; 
-}
-
-function strapcore_blog_footer() {
-	if ( true == get_theme_mod( 'blog_footer', true ) ) : ?>
-		<div class="card-footer text-muted">
-			<div class ="entry-meta">
-				<?php
-				strapcore_posted_tags();
-				strapcore_posted_edit();
-				?>
-			</div>
-		</div>
-	<?php endif; 
-}
-
+/**
+ * Function displaying the date, author, category and comments meta data on single posts
+ */
 function strapcore_single_meta() {
 	if ( true == get_theme_mod( 'single_entry_meta', true ) ) : ?>
 		<div class="entry-meta">
@@ -353,6 +394,9 @@ function strapcore_single_meta() {
 	<?php endif; 
 }
 
+/**
+ * Function displaying the tags and edit post link at the footer on single posts
+ */
 function strapcore_single_footer() {
 	if ( true == get_theme_mod( 'single_entry_footer', true ) ) : ?>
 		<footer class="entry-footer">
@@ -364,6 +408,9 @@ function strapcore_single_footer() {
 	<?php endif; 
 }
 
+/**
+ * Built in contact form to be displayed on the contact page template
+ */
 function strapcore_contact_form() {
 	if(isset($_POST['submitted'])) {
 		if(trim($_POST['contactName']) === '') {
@@ -465,6 +512,9 @@ function strapcore_contact_form() {
 	<?php }
 } 
 
+/**
+ * Loop displaying the four most recent projects
+ */
 function strapcore_latest_projects() {
 	// Define our WP Query Parameters - https://developer.wordpress.org/reference/classes/wp_query/
 	$args = array(
@@ -494,6 +544,9 @@ function strapcore_latest_projects() {
 	wp_reset_postdata();
 }
 
+/**
+ * Loop displaying team members
+ */
 function strapcore_team_members() {
 	// Define our WP Query Parameters - https://developer.wordpress.org/reference/classes/wp_query/
 	$args = array(
@@ -520,4 +573,36 @@ function strapcore_team_members() {
 	</div>
 	<?php endwhile;
 	wp_reset_postdata();
+}
+
+/**
+ * Display the header image for the index. archive, search and 404 pages
+ */
+function strapcore_header_image(){
+	if ( is_archive() ) :
+		if (get_theme_mod('archive_header_image') != ''):
+			$img_url = get_theme_mod('archive_header_image');
+		endif;
+	elseif ( is_search() ) :
+		if (get_theme_mod('search_header_image') != ''):
+			$img_url = get_theme_mod('search_header_image');
+		endif;
+	elseif ( is_404() ) :
+		if (get_theme_mod('404_header_image') != ''):
+			$img_url = get_theme_mod('404_header_image');
+		endif;
+	else :
+		if (get_theme_mod('blog_header_image') != ''):
+			$img_url = get_theme_mod('blog_header_image');	
+		endif;
+	endif;
+	?>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="header-img mx-auto">
+				<img src="<?php echo $img_url; ?>">
+			</div>	
+		</div>
+	</div>
+	<?php	
 }

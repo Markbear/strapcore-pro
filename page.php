@@ -15,25 +15,28 @@
 get_header('bootstrap');
 ?>
 
-	<div class="container">
-		<div class="row">
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main">
 		
 			<?php strapcore_breadcrumbs_pages(); ?>
+			
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<?php
+						while ( have_posts() ) :
+							the_post();
 
-			<div id="primary" class="full-content-area">
-				<main id="main" class="site-main">
+							get_template_part( 'template-parts/content', 'page' );
 
-				<?php
-				while ( have_posts() ) :
-					the_post();
+						endwhile; // End of the loop.
+						?>
+					</div>
+				</div>
+			</div>
 
-					get_template_part( 'template-parts/content', 'page' );
-
-				endwhile; // End of the loop.
-				?>
-
-				</main><!-- #main -->
-			</div><!-- #primary -->
+		</main><!-- #main -->
+	</div><!-- #primary -->
 
 <?php
 get_footer();

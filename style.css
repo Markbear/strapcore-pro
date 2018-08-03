@@ -6570,8 +6570,12 @@ a.text-dark:hover, a.text-dark:focus {
 .updated:not(.published) {
   display: none; }
 
-.page-content,
-.entry-content,
+.page-content {
+  margin: 1.5em 0 0; }
+
+.entry-content {
+  margin: 0; }
+
 .entry-summary {
   margin: 1.5em 0 0; }
 
@@ -6579,32 +6583,19 @@ a.text-dark:hover, a.text-dark:focus {
   clear: both;
   margin: 0 0 1.5em; }
 
+.accordian .card-title {
+  margin-bottom: 0; }
+
 .site-content {
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
   word-break: break-word;
   padding-bottom: 20px; }
   .site-content .breadcrumbs {
-    position: relative;
-    width: 100%;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
-    flex: 0 0 100%;
-    max-width: 100%;
     margin-top: 20px; }
     .site-content .breadcrumbs svg {
       margin-top: -3px; }
   .site-content .content-area {
-    position: relative;
-    width: 100%;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
-    flex: 0 0 75%;
-    max-width: 75%; }
+    /*@include make-col-ready();
+		@include make-col(9);	*/ }
   .site-content .full-content-area {
     position: relative;
     width: 100%;

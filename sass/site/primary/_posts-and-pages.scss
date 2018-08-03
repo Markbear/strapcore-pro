@@ -9,8 +9,14 @@
 	display: none;
 }
 
-.page-content,
-.entry-content,
+.page-content {
+	margin: 1.5em 0 0;
+}
+
+.entry-content {
+	margin: 0;
+}
+
 .entry-summary {
 	margin: 1.5em 0 0;
 }
@@ -20,14 +26,19 @@
 	margin: 0 0 1.5em;
 }
 
+.accordian {
+	.card-title {
+		margin-bottom: 0;
+	}
+}
+
 .site-content {
-	@include make-row();
+	
 	word-break: break-word; 
 	padding-bottom: 20px;
 	
 	.breadcrumbs {
-		@include make-col-ready();
-		@include make-col(12);	
+
 		margin-top: 20px;
 		
 		svg {
@@ -36,8 +47,8 @@
 	}
 
 	.content-area {
-		@include make-col-ready();
-		@include make-col(9);	
+		/*@include make-col-ready();
+		@include make-col(9);	*/
 	}
 	
 	.full-content-area {
