@@ -25,6 +25,7 @@ get_header('bootstrap');
 			<?php
 			if ( have_posts() ) :
 
+				//Not sure if needed - can reinstate if found to useful or will remove in later versions if not used.
 				/*if ( is_home() && ! is_front_page() ) :
 					?>
 					<header>

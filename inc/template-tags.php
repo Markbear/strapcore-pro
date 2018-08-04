@@ -513,69 +513,6 @@ function strapcore_contact_form() {
 } 
 
 /**
- * Loop displaying the four most recent projects
- */
-function strapcore_latest_projects() {
-	// Define our WP Query Parameters - https://developer.wordpress.org/reference/classes/wp_query/
-	$args = array(
-		'post_type' => 'projects',
-		'posts_per_page' => 3,
-	);
-	$the_query = new WP_Query( $args );
-	 
-	while ($the_query -> have_posts('')) : $the_query -> the_post();
-	?>
-	
-	<div class="col-md-3 col-sm-6 mb-4">
-		<div class="card">
-			<div class="card-img-top">
-			<?php if ( has_post_thumbnail() ) { ?>
-				<a href="<?php the_permalink() ?>"><?php the_post_thumbnail(); ?></a>
-			<?php } ?>
-			</div>
-		<div class="card-body">
-			<h5 class="card-title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h5>
-		</div>
-		 
-		<?php // the_excerpt(); ?>
-		</div>
-	</div>
-	<?php endwhile;
-	wp_reset_postdata();
-}
-
-/**
- * Loop displaying team members
- */
-function strapcore_team_members() {
-	// Define our WP Query Parameters - https://developer.wordpress.org/reference/classes/wp_query/
-	$args = array(
-		'post_type' => 'teams',
-	);
-	$the_query = new WP_Query( $args );
-	 
-	while ($the_query -> have_posts('')) : $the_query -> the_post();
-	?>
-	
-	<div class="col-md-3 col-sm-6 mb-4">
-		<div class="card">
-			<div class="card-img-top">
-			<?php if ( has_post_thumbnail() ) { ?>
-				<a href="<?php the_permalink() ?>"><?php the_post_thumbnail(); ?></a>
-			<?php } ?>
-			</div>
-		<div class="card-body">
-			<h5 class="card-title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h5>
-		</div>
-		 
-		<?php // the_excerpt(); ?>
-		</div>
-	</div>
-	<?php endwhile;
-	wp_reset_postdata();
-}
-
-/**
  * Display the header image for the index. archive, search and 404 pages
  */
 function strapcore_header_image(){

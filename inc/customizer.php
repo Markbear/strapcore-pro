@@ -10,55 +10,14 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function strapcore_customize_register( $wp_customize ) {
-	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
-	if ( isset( $wp_customize->selective_refresh ) ) {
-		$wp_customize->selective_refresh->add_partial( 'blogname', array(
-			'selector'        => '.site-title a',
-			'render_callback' => 'strapcore_customize_partial_blogname',
-		) );
-		$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
-			'selector'        => '.site-description',
-			'render_callback' => 'strapcore_customize_partial_blogdescription',
-		) );
-	}
-}
-add_action( 'customize_register', 'strapcore_customize_register' );
 
-/**
- * Render the site title for the selective refresh partial.
- *
- * @return void
- */
-function strapcore_customize_partial_blogname() {
-	bloginfo( 'name' );
-}
-
-/**
- * Render the site tagline for the selective refresh partial.
- *
- * @return void
- */
-function strapcore_customize_partial_blogdescription() {
-	bloginfo( 'description' );
-}
-
-/**
- * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
- */
-function strapcore_customize_preview_js() {
-	wp_enqueue_script( 'strapcore-pro-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
-}
-add_action( 'customize_preview_init', 'strapcore_customize_preview_js' );
 
 if ( class_exists('Kirki') ) {
-	Kirki::add_config( 'strapcore_theme', array(
+	/*Kirki::add_config( 'strapcore_theme', array(
 		'capability'    => 'edit_theme_options',
 		'option_type'   => 'theme_mod',
-	) );
+	) );*/
 	
 
 	
@@ -354,7 +313,7 @@ if ( class_exists('Kirki') ) {
 		'title'       => esc_attr__( 'Projects Settings', 'strapcore-pro' ),
 		'description' => esc_attr__( '', 'strapcore-pro' ),
 	) );*/
-	
+/*	
 	Kirki::add_section( 'projects_section', array(
 		'title'          => esc_attr__( 'Projects', 'strapcore-pro' ),
 		'description'    => esc_attr__( 'Control the settings for the projects section.', 'strapcore-pro' ),
@@ -388,7 +347,7 @@ if ( class_exists('Kirki') ) {
 		'section'     => 'projects_section',
 		'default'     => '',
 	) );
-	
+*/
 	
 	/* Services Settings */
 /*	Kirki::add_panel( 'services_panel', array(
@@ -396,7 +355,7 @@ if ( class_exists('Kirki') ) {
 		'title'       => esc_attr__( 'Services Settings', 'strapcore-pro' ),
 		'description' => esc_attr__( '', 'strapcore-pro' ),
 	) );*/
-	
+/*	
 	Kirki::add_section( 'services_section', array(
 		'title'          => esc_attr__( 'Services', 'strapcore-pro' ),
 		'description'    => esc_attr__( 'Control the settings for the services section.', 'strapcore-pro' ),
@@ -448,7 +407,7 @@ if ( class_exists('Kirki') ) {
 		'section'     => 'services_section',
 		'default'     => '',
 	) );
-	
+*/
 	
 		/* Team Settings */
 /*	Kirki::add_panel( 'services_panel', array(
@@ -456,7 +415,7 @@ if ( class_exists('Kirki') ) {
 		'title'       => esc_attr__( 'Services Settings', 'strapcore-pro' ),
 		'description' => esc_attr__( '', 'strapcore-pro' ),
 	) );*/
-	
+/*	
 	Kirki::add_section( 'teams_section', array(
 		'title'          => esc_attr__( 'Teams', 'strapcore-pro' ),
 		'description'    => esc_attr__( 'Control the settings for the teams section.', 'strapcore-pro' ),
@@ -490,7 +449,7 @@ if ( class_exists('Kirki') ) {
 		'section'     => 'teams_section',
 		'default'     => '',
 	) );
-	
+*/	
 
 		/* FAQ Settings */
 /*	Kirki::add_panel( 'services_panel', array(
@@ -498,7 +457,7 @@ if ( class_exists('Kirki') ) {
 		'title'       => esc_attr__( 'Services Settings', 'strapcore-pro' ),
 		'description' => esc_attr__( '', 'strapcore-pro' ),
 	) );*/
-	
+/*	
 	Kirki::add_section( 'faq_section', array(
 		'title'          => esc_attr__( 'FAQs', 'strapcore-pro' ),
 		'description'    => esc_attr__( 'Control the settings for the FAQ section.', 'strapcore-pro' ),
@@ -532,7 +491,7 @@ if ( class_exists('Kirki') ) {
 		'section'     => 'faq_section',
 		'default'     => '',
 	) );	
-
+*/
 
 	
 	/* Footer Settings */
@@ -573,6 +532,7 @@ if ( class_exists('Kirki') ) {
 		'priority' => 20,
 	) );
 	
+
 
 	
 		Kirki::remove_section( 'colors' );
