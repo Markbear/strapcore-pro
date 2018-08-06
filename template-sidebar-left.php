@@ -15,7 +15,7 @@ get_header('bootstrap');
 		
 			<?php
 			// action hook for any content to be placed after the page content
-			do_action ( 'st_after_page_content' );
+			do_action ( 'st_before_page_content' );
 			?>
 
 			<div class="container">
