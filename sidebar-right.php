@@ -6,12 +6,8 @@
  *
  * @package Strapcore-Pro
  */
-
-if ( ! is_active_sidebar( 'sidebar-right' ) ) {
-	return;
-}
+ 
+<?php
+// action hook for any content to be placed inside the sidebar on the page template with a right sidebar
+do_action ( 'st_sidebar_right' );
 ?>
-
-<aside id="secondary" class="widget-area col-md-3">
-	<?php dynamic_sidebar( 'sidebar-right' ); ?>
-</aside><!-- #secondary -->

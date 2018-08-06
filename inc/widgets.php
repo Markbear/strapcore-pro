@@ -5,7 +5,7 @@
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function strapcore_widgets_init() {
-	register_sidebar( array(
+/*	register_sidebar( array(
 		'name'          => esc_html__( 'Default Sidebar', 'strapcore-pro' ),
 		'id'            => 'sidebar-1',
 		'description'   => esc_html__( 'This is the default sidebar for index, archive and search pages.', 'strapcore-pro' ),
@@ -13,7 +13,7 @@ function strapcore_widgets_init() {
 		'after_widget'  => '</div></section>',
 		'before_title'  => '<h3 class="widget-title card-title">',
 		'after_title'   => '</h3>',
-	) );
+	) );*/
 	
 	register_sidebar( array(
 		'name'          => esc_html__( 'Left Sidebar', 'strapcore-pro' ),
@@ -66,6 +66,36 @@ function strapcore_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'strapcore_widgets_init' );
+
+/**
+ * Display Right Sidebar
+ */
+function strapcore_sidebar_right() {
+	if ( ! is_active_sidebar( 'sidebar-right' ) ) {
+		return;
+	}
+	?>
+	<aside id="secondary" class="widget-area col-md-3">
+		<?php dynamic_sidebar( 'sidebar-right' ); ?>
+	</aside><!-- #secondary -->
+<?php
+}
+add_action('st_sidebar_right', 'strapcore_sidebar_right');
+
+/**
+ * Display Right Sidebar
+ */
+function strapcore_sidebar_left() {
+	if ( ! is_active_sidebar( 'sidebar-left' ) ) {
+		return;
+	}
+	?>
+	<aside id="secondary" class="widget-area col-md-3">
+		<?php dynamic_sidebar( 'sidebar-left' ); ?>
+	</aside><!-- #secondary -->
+<?php
+}
+add_action('st_sidebar_left', 'strapcore_sidebar_left');
 
 /**
  * Display Footer Widgets

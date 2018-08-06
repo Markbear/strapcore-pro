@@ -191,3 +191,30 @@ function strapcore_comment( $comment, $args, $depth ) {
 	<?php endif;
 }
 
+/*
+function test_action_hooks(){
+	echo '<h1>I have been placed here!</h1>';
+}
+add_action('st_before_header', 'test_action_hooks');
+add_action('st_before_content', 'test_action_hooks');
+add_action('st_after_content', 'test_action_hooks');
+add_action('st_before_index_content', 'test_action_hooks');
+add_action('st_after_index_content', 'test_action_hooks');
+add_action('st_before_archive_content', 'test_action_hooks');
+add_action('st_after_archive_content', 'test_action_hooks');
+add_action('st_before_page_content', 'test_action_hooks');
+add_action('st_after_page_content', 'test_action_hooks');*/
+
+function strapcore_page_header() { ?>
+	<header class="entry-header">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 mt-4">
+					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+				</div>
+			</div>
+		</div>
+	</header><!-- .entry-header -->
+<?php
+}
+add_action('st_before_content', 'strapcore_page_header');

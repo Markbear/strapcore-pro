@@ -11,6 +11,11 @@
 
 ?>
 
+	<?php
+	// action hook for any content to be placed after the page or post content
+	do_action ( 'st_after_content' );
+	?>
+	
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">

@@ -40,14 +40,6 @@
 			</div>
 		</div>
 	</div>
-	
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<h2 class="mt-4 mb-3">Meet the Team</h2>
-			</div>
-			<?php strapcore_team_members(); ?>
-		</div>
-	</div>
+
 
 </article><!-- #post-<?php the_ID(); ?> -->

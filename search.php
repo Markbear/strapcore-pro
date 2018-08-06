@@ -10,12 +10,13 @@
 get_header('bootstrap');
 ?>
 
-<?php strapcore_header_image(); ?>
-
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 		
-			<?php strapcore_breadcrumbs(); ?>
+			<?php
+			// action hook for any content to be placed before the search page content
+			do_action ( 'st_before_search_content' );
+			?>
 
 			<?php if ( have_posts() ) : ?>
 
@@ -48,13 +49,7 @@ get_header('bootstrap');
 				endwhile;
 				?>
 				
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<?php strapcore_posts_navigation(); ?>
-					</div>
-				</div>
-			</div>
+			<?php strapcore_posts_navigation(); ?>
 
 			<?php else : ?>
 					
@@ -65,6 +60,11 @@ get_header('bootstrap');
 				</div>
 			
 			<?php endif; ?>
+			
+			<?php
+			// action hook for any content to be placed after the search page content
+			do_action ( 'st_after_search_content' );
+			?>
 
 		</main><!-- #main -->
 	</section><!-- #primary -->

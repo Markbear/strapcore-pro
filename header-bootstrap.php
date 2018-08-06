@@ -27,6 +27,11 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 
+	<?php
+	// action hook for any content to be placed before the header
+	do_action ( 'st_before_header' );
+	?>
+
 	<?php if ( true == get_theme_mod( 'fixed_navbar', true ) ) : ?>
 		<header id="masthead" class="site-header fixed-top">
 	<?php else : ?>
@@ -68,3 +73,8 @@
 	</header><!-- .site-header -->
 
 	<div id="content" class="site-content">
+	
+	<?php
+	// action hook for any content to be placed before the page or post content
+	do_action ( 'st_before_content' );
+	?>

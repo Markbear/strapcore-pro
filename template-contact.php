@@ -7,17 +7,16 @@
  * @package stanleywp
  */
  
-get_header('bootstrap'); ?>
- 
-<?php
- ?>
- 
-<?php strapcore_post_thumbnail(); ?>
+get_header('bootstrap'); 
+?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 		
-			<?php strapcore_breadcrumbs_pages(); ?>
+			<?php
+			// action hook for any content to be placed before the contact page content
+			do_action ( 'st_before_contact_content' );
+			?>
 		 
 			<?php while ( have_posts() ) : the_post(); ?>
  
@@ -54,6 +53,11 @@ get_header('bootstrap'); ?>
 				</article><!-- #post-## -->
 				
 			<?php endwhile; // end of the loop. ?>
+			
+			<?php
+			// action hook for any content to be placed after the contact page content
+			do_action ( 'st_after_contact_content' );
+			?>
 					
 		</main><!-- #main -->
 	</div><!-- .container -->

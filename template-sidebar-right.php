@@ -12,7 +12,10 @@ get_header('bootstrap');
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 		
-			<?php strapcore_breadcrumbs_pages(); ?>
+			<?php
+			// action hook for any content to be placed before the page content
+			do_action ( 'st_before_page_content' );
+			?>
 
 			<div class="container">
 				<div class="row">
@@ -29,6 +32,11 @@ get_header('bootstrap');
 					<?php get_sidebar('right'); ?>
 				</div>
 			</div>
+			
+			<?php
+			// action hook for any content to be placed after the page content
+			do_action ( 'st_after_page_content' );
+			?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

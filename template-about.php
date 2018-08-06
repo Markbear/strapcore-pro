@@ -13,7 +13,10 @@ get_header('bootstrap');
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 		
-			<?php strapcore_breadcrumbs_pages(); ?>
+			<?php
+			// action hook for any content to be placed before the about page content
+			do_action ( 'st_before_about_content' );
+			?>
 			
 			<?php
 			while ( have_posts() ) :
@@ -22,6 +25,11 @@ get_header('bootstrap');
 				get_template_part( 'template-parts/content', 'about' );
 
 			endwhile; // End of the loop.
+			?>
+			
+			<?php
+			// action hook for any content to be placed after the about page content
+			do_action ( 'st_after_about_content' );
 			?>
 
 		</main><!-- #main -->

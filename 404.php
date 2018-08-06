@@ -10,12 +10,13 @@
 get_header('bootstrap');
 ?>
 
-<?php strapcore_header_image(); ?>
-
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 		
-			<?php strapcore_breadcrumbs_pages(); ?>
+			<?php
+			// action hook for any content to be placed before the 404 page content
+			do_action ( 'st_before_404_content' );
+			?>
 
 			<section class="error-404 not-found">
 			
@@ -112,6 +113,11 @@ get_header('bootstrap');
 
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->
+			
+			<?php
+			// action hook for any content to be placed after the 404 page content
+			do_action ( 'st_after_404_content' );
+			?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

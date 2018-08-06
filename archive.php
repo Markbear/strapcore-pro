@@ -10,10 +10,13 @@
 get_header('bootstrap');
 ?>
 
-<?php strapcore_header_image(); ?>
-				
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
+			
+			<?php
+			// action hook for any content to be placed before the archive.php content
+			do_action ( 'st_before_archive_content' );
+			?>
 		
 			<?php strapcore_breadcrumbs(); ?>
 
@@ -60,6 +63,11 @@ get_header('bootstrap');
 				</div>
 			
 			<?php endif; ?>
+			
+			<?php
+			// action hook for any content to be placed before the archive.php content
+			do_action ( 'st_after_archive_content' );
+			?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

@@ -15,12 +15,15 @@
 get_header('bootstrap');
 ?>
 
-<?php strapcore_header_image(); ?>
+
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 		
-			<?php strapcore_breadcrumbs(); ?>
+			<?php
+			// action hook for any content to be placed before the index.php content
+			do_action ( 'st_before_index_content' );
+			?>
 
 			<?php
 			if ( have_posts() ) :
@@ -59,6 +62,11 @@ get_header('bootstrap');
 				</div>
 			
 			<?php endif; ?>
+			
+			<?php
+			// action hook for any content to be placed after the index.php content
+			do_action ( 'st_after_index_content' );
+			?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
