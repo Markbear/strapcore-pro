@@ -19,6 +19,8 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
+	
+		<?php strapcore_simple_back_to_top(); ?>
 		
 		<?php strapcore_display_footer_widgets(); ?>
 		

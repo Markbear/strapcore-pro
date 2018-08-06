@@ -18,6 +18,8 @@ function strapcore_scripts() {
 	
 	wp_enqueue_script( 'strappress-fa', '//use.fontawesome.com/releases/v5.2.0/js/all.js', array(), '5.2.0' );
 	
+	wp_enqueue_script( 'back-to-top', get_template_directory_uri() . '/js/back-to-top.js', array(), '1.0.0' );
+	
 	if ( true == get_theme_mod( 'fixed_navbar', true ) ) :
 		wp_enqueue_script( 'strapcore-pro-fixed-nav', get_template_directory_uri() . '/js/fixed-nav.js', array(), '20151215', true );
 	endif;

@@ -218,3 +218,20 @@ function strapcore_page_header() { ?>
 <?php
 }
 add_action('st_before_content', 'strapcore_page_header');
+
+
+function strapcore_back_to_top() {
+	echo '<a href="#" class="back-to-top"><i class="fas fa-angle-double-up"></i></a>';
+}
+add_action('st_before_header', 'strapcore_back_to_top');
+
+function strapcore_simple_back_to_top() { ?>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<h4 class="mb-4 mt-4"><a href="#" class="simple-back-to-top"><i class="fas fa-angle-double-up"></i> Back to Top</a></h4>
+			</div>
+		</div>
+	</div>
+<?php 
+}

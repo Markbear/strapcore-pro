@@ -47,12 +47,30 @@
 				&:first-child > a {
 					border-left:none;
 					padding: 0 8px 0 0;
-				}
-				
+				}	
 			}
-		
-		}
-		
+		}	
 	}
+}
 
+a.back-to-top {
+	display: none;
+	/*visibility: hidden;*/
+	width: 60px;
+	height: 60px;
+	/*text-indent: -9999px;*/
+	position: fixed;
+	z-index: 999;
+	right: 20px;
+	bottom: 20px;
+	font-size: 32px;
+	text-align: center;
+	color: #fff;
+	background-color: #999
+	/*-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;*/
+}
+a:hover.back-to-top {
+	background-color: #666;
 }
