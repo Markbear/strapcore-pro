@@ -2,19 +2,21 @@
 /**
  * Displays the page or post title
  */
-function strapcore_page_header() { ?>
-	<header class="entry-header">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 mt-4">
-					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+function strapcore_page_header() {
+	if ( is_single() || is_page() ) { ?>
+		<header class="entry-header">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 mt-4">
+						<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+					</div>
 				</div>
 			</div>
-		</div>
-	</header><!-- .entry-header -->
-<?php
+		</header><!-- .entry-header -->
+	<?php
+	}
 }
-add_action('st_before_content', 'strapcore_page_header');
+add_action('st_before_content', 'strapcore_page_header', 20);
 
 /**
  * Custom function to highlight search terms

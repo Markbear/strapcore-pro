@@ -41,7 +41,7 @@ function strapcore_breadcrumbs() {
 			echo '</div>';
 	endif;
 }
-add_action('st_before_content', 'strapcore_breadcrumbs', 20);
+add_action('st_before_content', 'strapcore_breadcrumbs', 30);
 
 /**
  * Disable Breadcrumbs on pages

@@ -72,6 +72,12 @@ if ( ! function_exists( 'strapcore_setup' ) ) :
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
+		
+		/**
+		 * Add support for wide aliged images in gutenberg.
+		 *
+		 */
+		add_theme_support( 'align-wide' );
 	}
 endif;
 add_action( 'after_setup_theme', 'strapcore_setup' );

@@ -1,0 +1,44 @@
+@media only screen and (min-width: 768px) {
+
+	.alignfull {
+		margin-left: calc(49% - 49vw);
+		margin-right: calc(49% - 49vw);
+		width: auto;
+		max-width: 1000%;
+	}
+
+	.alignwide {
+		margin-left: calc(25% - 25vw);
+		margin-right: calc(25% - 25vw);
+		width: auto;
+		max-width: 1000%;
+	}
+
+	.alignwide img,
+	.alignfull img {
+		display: block;
+		margin: 0 auto;
+	}
+
+}
+
+blockquote {
+	all: initial;
+	@extend .blockquote;
+	
+	* {
+		all: unset;
+	}
+	
+	cite {
+		@extend .blockquote-footer;
+	}
+}
+
+.wp-block-button {
+
+	.wp-block-button__link {
+		@extend .btn;
+		@extend .btn-light;
+	}
+}
